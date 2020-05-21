@@ -5,6 +5,7 @@ import React from 'react';
 
 function MatchingCollegePresenter({ formData, handleChange, handleSubmit }) {
   //formData.colleges = list of colleges and we should show them
+  console.log('in college presenter!');
   return (
     <div>
       currently in matchingCollegePresenter
