@@ -1,0 +1,3 @@
+//free_c2f12782a8449751c2c15f5891
+
+const API_KEY = 'free_c2f12782a8449751c2c15f5891';
