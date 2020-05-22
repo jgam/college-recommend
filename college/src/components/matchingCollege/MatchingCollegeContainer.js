@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import MatchingCollegePresenter from './MatchingCollegePresenter';
-import axios from 'axios';
 import getColleges from '../api/CollegeApi';
+import ShowColleges from '../pages/ShowColleges';
 
 const initialFormData = {
   act: '',
   sat: '',
   gpa: '',
   colleges: {},
-  loading: true,
 };
 
 function MatchingCollegeContainer() {
@@ -16,7 +15,7 @@ function MatchingCollegeContainer() {
   const [formData, setFormData] = useState(initialFormData);
 
   //use api
-  async function getAPI(formData) {
+  function getAPI(formData) {
     const params = {
       //two things: info_ids & filters
       filters: {
@@ -27,30 +26,37 @@ function MatchingCollegeContainer() {
         closeToMyScores: true,
       },
     };
+    /*
     let colleges = await axios.get(
       'https://api.collegeai.com/v1/api/college-list?api_key=free_c2f12782a8449751c2c15f5891',
       { params }
     );
-    return colleges.data.colleges;
+    */
+    console.log('here is new api call');
+    getColleges(params).then((data) => {
+      console.log(data.data.colleges);
+      //here I should update state to give this to college presenter
+      setFormData({ ...formData, colleges: data.data.colleges });
+    });
+    //return colleges.data.colleges;
+    //return [];
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     console.log('im in handlesubmit');
 
     try {
-      const data = await getAPI(formData);
+      getAPI(formData);
       //update colleges with setFormdata
       //reset the buttons
-      setFormData({ ...formData, colleges: data });
       console.log('this should be after college data');
     } catch (error) {
       console.log(error);
     } finally {
       console.log('in finally');
-      console.log(formData);
-      setFormData({ ...formData, loading: false });
+      setFormData({ ...formData });
     }
   };
 
@@ -61,9 +67,12 @@ function MatchingCollegeContainer() {
       [e.target.name]: e.target.value,
     });
   };
-
+  console.log('before the calling');
   console.log(formData);
 
+  const { sat, act, gpa, colleges } = formData;
+  console.log(colleges);
+  console.log(colleges.length);
   return (
     <div>
       <MatchingCollegePresenter
@@ -71,6 +80,7 @@ function MatchingCollegeContainer() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
+      {colleges.length != undefined ? <ShowColleges colleges={colleges} /> : ''}
     </div>
   );
 }
