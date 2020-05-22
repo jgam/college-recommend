@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MatchingCollegePresenter from './MatchingCollegePresenter';
 import axios from 'axios';
+import getColleges from '../api/CollegeApi';
 
 const initialFormData = {
   act: '',
