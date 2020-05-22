@@ -19,11 +19,9 @@ function MatchingCollegeContainer() {
     const params = {
       //two things: info_ids & filters
       filters: {
-        schoolSize: ['large'],
-        zipCode: '02111',
-        distanceFromHomeMiles: [0, 500],
-        satOverall: 1200,
-        closeToMyScores: true,
+        satOverall: formData.sat,
+        actComposite: formData.act,
+        gpaMinimumTenPercent: formData.gpa,
       },
     };
     /*
@@ -33,6 +31,7 @@ function MatchingCollegeContainer() {
     );
     */
     console.log('here is new api call');
+    console.log(formData);
     getColleges(params).then((data) => {
       console.log(data.data.colleges);
       //here I should update state to give this to college presenter
