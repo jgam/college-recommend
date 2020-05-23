@@ -23,7 +23,8 @@ function MatchingCollegeContainer() {
         actComposite: formData.act,
         gpaMinimumTenPercent: formData.gpa,
       },
-      limit: 5,
+      offset: 9, //if want to load more info than 20 this is page index
+      info_ids: ['website', 'shortDescription', 'longDescription'], //returned object's content
     };
     /*
     let colleges = await axios.get(
@@ -70,7 +71,7 @@ function MatchingCollegeContainer() {
   console.log('before the calling');
   console.log(formData);
 
-  const { sat, act, gpa, colleges } = formData;
+  const { colleges } = formData;
   console.log(colleges);
   console.log(colleges.length);
   return (
@@ -80,7 +81,11 @@ function MatchingCollegeContainer() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-      {colleges.length != undefined ? <ShowColleges colleges={colleges} /> : ''}
+      {colleges.length !== undefined ? (
+        <ShowColleges colleges={colleges} />
+      ) : (
+        ''
+      )}
     </div>
   );
 }
