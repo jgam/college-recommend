@@ -23,6 +23,7 @@ function MatchingCollegeContainer() {
         actComposite: formData.act,
         gpaMinimumTenPercent: formData.gpa,
       },
+      limit: 5,
     };
     /*
     let colleges = await axios.get(
