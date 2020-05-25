@@ -24,7 +24,13 @@ function MatchingCollegeContainer() {
         gpaMinimumTenPercent: formData.gpa,
       },
       offset: 9, //if want to load more info than 20 this is page index
-      info_ids: ['website', 'shortDescription', 'longDescription'], //returned object's content
+      info_ids: [
+        'website',
+        'shortDescription',
+        'longDescription',
+        'campus_image',
+        'logo_image',
+      ], //returned object's content
     };
     /*
     let colleges = await axios.get(
@@ -61,6 +67,7 @@ function MatchingCollegeContainer() {
     }
   };
 
+  //update state regarding input value
   const handleChange = (e) => {
     console.log(e.target);
     setFormData({
@@ -68,12 +75,13 @@ function MatchingCollegeContainer() {
       [e.target.name]: e.target.value,
     });
   };
-  console.log('before the calling');
+
+  //destructing
+  const { colleges } = formData;
+
   console.log(formData);
 
-  const { colleges } = formData;
-  console.log(colleges);
-  console.log(colleges.length);
+  //call ShowColleges based on state
   return (
     <div>
       <MatchingCollegePresenter
