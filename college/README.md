@@ -85,5 +85,7 @@ models [userModel.js]
 routes[authentication.js, index.js]
 
 server.js: run express server to receive request & get mongoose to deal with the data
+index.js: actual REST API methods specified
+userModel.js: mongoose schema defined
 
 ### Connecting with the App
