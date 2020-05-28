@@ -1,5 +1,6 @@
 import React from 'react';
 import MatchingCollege from './components/matchingCollege';
+import Login from './components/login';
 
 import {
   BrowserRouter as Router,
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <Route exact path={'/'} component={Home} />
         <Route exact path={'/college'} component={MatchingCollege} />
+        <Route exact path={'/login'} component={Login} />
         <Redirect from={'*'} to={'/'} />
       </Switch>
     </Router>

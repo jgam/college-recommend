@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faUniversity } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Header = styled.div`
   width: 100%;
@@ -43,6 +44,8 @@ const MenuBox = styled.div`
   align-items: center;
 `;
 
+const Login = styled.button``;
+
 const SearchCustomer = styled.div`
   margin: 0 10px;
   cursor: pointer;
@@ -83,6 +86,9 @@ function HomePresenter() {
             <MenuBox>RECRUIT</MenuBox>
           </HeaderMenus>
           <Search>
+            <Login>
+              <Link to={'/login'}>Login</Link>
+            </Login>
             <SearchCustomer>CUSTOMER</SearchCustomer>
             <SearchIcon>
               <FontAwesomeIcon icon={faSearch} />

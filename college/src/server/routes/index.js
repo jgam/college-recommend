@@ -3,10 +3,10 @@
 module.exports = function (app, User) {
   // GET ALL users
   app.get('/api/users', function (req, res) {
-    User.find(function (err, books) {
+    User.find(function (err, users) {
       if (err)
         return res.status(500).send({ error: 'database erroroccurred!' });
-      res.json(books);
+      res.status(200).json(users);
     });
   });
 
@@ -21,7 +21,6 @@ module.exports = function (app, User) {
 
   // CREATE User
   app.post('/api/user', function (req, res) {
-    console.log('post in here');
     var user = new User();
     user.name = req.body.name;
     user.username = req.body.username;

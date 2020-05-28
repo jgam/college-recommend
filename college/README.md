@@ -89,3 +89,5 @@ index.js: actual REST API methods specified
 userModel.js: mongoose schema defined
 
 ### Connecting with the App
+
+- creating the login form with Link - to
