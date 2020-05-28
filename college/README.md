@@ -74,3 +74,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 - schemas, creating a model
 - schema types
 - validators
+- collection names
+- actions : [get, post, update, delete]
+
+### refactor and modulization the code
+
+Before:
+server [models, routes, server.js]
+models [userModel.js]
+routes[authentication.js, index.js]
+
+server.js: run express server to receive request & get mongoose to deal with the data
+
+### Connecting with the App

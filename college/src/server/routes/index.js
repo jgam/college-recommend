@@ -1,22 +1,25 @@
 // routes/index.js
 
 module.exports = function (app, User) {
-  // GET ALL BOOKS
-  app.get('/api/user', function (req, res) {
-    res.end();
+  // GET ALL users
+  app.get('/api/users', function (req, res) {
+    User.find(function (err, books) {
+      if (err)
+        return res.status(500).send({ error: 'database erroroccurred!' });
+      res.json(books);
+    });
   });
 
   // GET SINGLE BOOK
-  app.get('/api/user/:user_id', function (req, res) {
-    res.end();
-  });
-
-  // GET BOOK BY AUTHOR
   app.get('/api/user/:username', function (req, res) {
-    res.end();
+    User.findOne({ _id: req.params.username }, function (err, user) {
+      if (err) return res.status(500).json({ error: err });
+      if (!user) return res.status(404).json({ error: 'user not fonud' });
+      res.json(user);
+    });
   });
 
-  // CREATE BOOK
+  // CREATE User
   app.post('/api/user', function (req, res) {
     console.log('post in here');
     var user = new User();
@@ -35,12 +38,12 @@ module.exports = function (app, User) {
     });
   });
 
-  // UPDATE THE BOOK
+  // UPDATE THE user
   app.put('/api/user/:user_id', function (req, res) {
     res.end();
   });
 
-  // DELETE BOOK
+  // DELETE user
   app.delete('/api/user/:userid', function (req, res) {
     res.end();
   });
