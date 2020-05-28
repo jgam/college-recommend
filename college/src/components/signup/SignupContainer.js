@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import LoginPresenter from './LoginPresenter';
+import SignupPresenter from './SignupPresenter';
 
 const initialFormData = {
-  id: '',
-  pw: '',
+  username: '',
+  password: '',
+  name: '',
 };
 
-function LoginContainer() {
-  const [loginData, setLoginData] = useState(initialFormData);
-
+function SignupContainer() {
+  const [SignupData, setSignupData] = useState(initialFormData);
+  console.log(SignupData);
   function handleChange(e) {
-    setLoginData({
-      ...loginData,
+    setSignupData({
+      ...SignupData,
       [e.target.name]: e.target.value,
     });
   }
@@ -22,12 +23,12 @@ function LoginContainer() {
     console.log('im in handlesubmit');
   }
   return (
-    <LoginPresenter
-      loginData={loginData}
+    <SignupPresenter
+      SignupData={SignupData}
       handleChange={handleChange}
       handleSubmit={handleSubmit}
     />
   );
 }
 
-export default LoginContainer;
+export default SignupContainer;
