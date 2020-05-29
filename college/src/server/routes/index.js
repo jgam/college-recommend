@@ -10,7 +10,7 @@ module.exports = function (app, User) {
     });
   });
 
-  // GET SINGLE BOOK
+  // GET SINGLE User
   app.get('/api/user/:username', function (req, res) {
     User.findOne({ _id: req.params.username }, function (err, user) {
       if (err) return res.status(500).json({ error: err });

@@ -99,3 +99,4 @@ userModel.js: mongoose schema defined
 ### Token
 
 - from the server, tokenize password. (JWT, oAuth, cookie, session) -> go with JWT
+  a. create auth routes & controller to create jwt token and check the token file
