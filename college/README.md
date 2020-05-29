@@ -91,3 +91,11 @@ userModel.js: mongoose schema defined
 ### Connecting with the App
 
 - creating the login form with Link - to
+- create post button with sign up
+  \*cors error occurred: from server, added cors but still error? calling the api, added http protocol and solved
+
+## 20200529
+
+### Token
+
+- from the server, tokenize password. (JWT, oAuth, cookie, session) -> go with JWT
