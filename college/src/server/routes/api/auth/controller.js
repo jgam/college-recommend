@@ -30,3 +30,7 @@ exports.register = (req, res) => {
   User.findOneByUsername(username).then(create).then(respond).catch(onError);
   console.log(User);
 };
+
+exports.login = (req, res) => {
+  res.send('login api is working');
+};

@@ -109,3 +109,6 @@ currently based on url, I am creating user however, create method should be sepa
   fix: at then end, I was calling res.send while we already ended and sent the response
 
 ## 20200530
+
+register: POST /api/auth/register
+login: POST /api/auth/login

@@ -29,6 +29,7 @@ console.log(user);
 
 //send schema to router
 var router = require('./routes')(app, user);
+//for api
 app.use('/api', require('./routes/api'));
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
