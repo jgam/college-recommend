@@ -107,3 +107,5 @@ currently based on url, I am creating user however, create method should be sepa
 - creating methods and call them requires some basic understandings of javascript including static, methods, and promises and prototypes
   Issue: unhandledPromise: can't set headers after they are sent to the client
   fix: at then end, I was calling res.send while we already ended and sent the response
+
+## 20200530
