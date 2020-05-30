@@ -120,3 +120,9 @@ login: POST /api/auth/login
 ### how to use?
 
 - jwt.sign(payload, secret, options, [callback])//if call back exists, asynchronously work with params(error, token) and fn returns string
+
+- before, we need to set secret key from app with app.set in server.js
+
+- set it to jwt-secret and its value is pretty much a string that we set. e can go to https://jwt.io to decode it and check the payloads, header and everything.
+
+- set payload(login info), secret(secret key from app), option(expires and etc), and callback(error handling function)
