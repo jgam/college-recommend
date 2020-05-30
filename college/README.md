@@ -100,3 +100,8 @@ userModel.js: mongoose schema defined
 
 - from the server, tokenize password. (JWT, oAuth, cookie, session) -> go with JWT
   a. create auth routes & controller to create jwt token and check the token file
+
+conflicts?
+currently based on url, I am creating user however, create method should be separated?
+
+- creating methods and call them requires some basic understandings of javascript including static, methods, and promises and prototypes
