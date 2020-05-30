@@ -112,3 +112,11 @@ currently based on url, I am creating user however, create method should be sepa
 
 register: POST /api/auth/register
 login: POST /api/auth/login
+
+### jsonwebtoken?
+
+- module that uses jwt
+
+### how to use?
+
+- jwt.sign(payload, secret, options, [callback])//if call back exists, asynchronously work with params(error, token) and fn returns string
