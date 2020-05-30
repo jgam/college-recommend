@@ -15,7 +15,7 @@ var mongoose = require('mongoose');
 //mongoDB = college is the database name, and under their, we have collections
 var mongoDB =
   'mongodb+srv://jgam:19921019@cluster0-ewm3u.mongodb.net/college?retryWrites=true&w=majority';
-mongoose.connect(mongoDB, { useNewUrlParser: true });
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', function () {
