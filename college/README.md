@@ -126,3 +126,9 @@ login: POST /api/auth/login
 - set it to jwt-secret and its value is pretty much a string that we set. e can go to https://jwt.io to decode it and check the payloads, header and everything.
 
 - set payload(login info), secret(secret key from app), option(expires and etc), and callback(error handling function)
+
+### check?
+
+check: GET /api/auth/check
+
+checks the token to get the information
