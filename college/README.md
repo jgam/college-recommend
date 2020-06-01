@@ -144,3 +144,6 @@ GET /api/user/list
 - we need to save scripted password
 - first encrypted variable in create of usermodel
 - second decrypted variable in verify of userModel
+
+now need to connect with Login!
+Before, we need to save the token into cookie or web storage
