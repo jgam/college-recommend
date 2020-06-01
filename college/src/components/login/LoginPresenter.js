@@ -10,14 +10,14 @@ function LoginPresenter({ loginData, handleChange, handleSubmit }) {
           type={'text'}
           placeholder={'type in id'}
           value={loginData.id}
-          name={'id'}
+          name={'username'}
           onChange={handleChange}
         />
         <input
           type={'text'}
           placeholder={'type in pw'}
           value={loginData.pw}
-          name={'pw'}
+          name={'password'}
           onChange={handleChange}
         />
         <button>login</button>

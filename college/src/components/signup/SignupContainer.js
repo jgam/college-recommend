@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SignupPresenter from './SignupPresenter';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const initialFormData = {
   username: '',
@@ -9,6 +10,7 @@ const initialFormData = {
 };
 
 function SignupContainer() {
+  let history = useHistory();
   const [SignupData, setSignupData] = useState(initialFormData);
   console.log(SignupData);
   function handleChange(e) {
@@ -18,7 +20,7 @@ function SignupContainer() {
     });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     console.log('im in handlesubmit');
@@ -26,13 +28,20 @@ function SignupContainer() {
       var config = {
         headers: { 'Access-Control-Allow-Origin': '*' },
       };
-      axios.post('http://localhost:5000/api/user', SignupData, config);
+      var token = await axios.post(
+        'http://localhost:5000/api/auth/register',
+        SignupData,
+        config
+      );
       console.log('try done safely');
+      console.log(token);
+
+      //redirect to login page
+      history.push('/login');
     } catch (err) {
       console.log(err);
     }
-
-    console.log('post done');
+    console.log('signup done');
   }
   return (
     <SignupPresenter

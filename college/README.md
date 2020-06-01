@@ -147,3 +147,13 @@ GET /api/user/list
 
 now need to connect with Login!
 Before, we need to save the token into cookie or web storage
+
+### saving the tokens(connecting with frontend)
+
+1. signup
+
+- after registering succesfully, need to redirect to login => using history. (history.push(url u want to go to)) You can use history in side of Route and if not, you can use withRouter from react-router-dom
+
+2. login
+
+- after login successfully, save the token to the local storage
