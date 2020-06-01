@@ -132,3 +132,9 @@ login: POST /api/auth/login
 check: GET /api/auth/check
 
 checks the token to get the information
+
+## 20200601
+
+### continuoing on middlewares of authMiddleware
+
+GET /api/user/list
