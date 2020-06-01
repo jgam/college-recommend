@@ -4,6 +4,9 @@ var mongoose = require('mongoose');
 //Define a schema
 var Schema = mongoose.Schema;
 
+const crypto = require('crypto');
+const config = require('../config');
+
 var UserSchema = new Schema({
   username: String,
   password: String,
@@ -13,9 +16,13 @@ var UserSchema = new Schema({
 
 //here create methods for UserSchema
 UserSchema.statics.create = function (name, username, password) {
+  const encrypted = crypto
+    .createHmac('sha1', config.secret)
+    .update(password)
+    .digest('base64');
   const user = new this({
     username,
-    password,
+    password: encrypted,
     name,
   });
   return user.save();
@@ -30,7 +37,11 @@ UserSchema.statics.findOneByUsername = function (username) {
 
 //verify the pw of the user document
 UserSchema.methods.verify = function (password) {
-  return this.password === password;
+  const decrypted = crypto
+    .createHmac('sha1', config.secret)
+    .update(password)
+    .digest('base64');
+  return this.password === decrypted;
 };
 
 UserSchema.methods.assignAdmin = function () {

@@ -138,3 +138,9 @@ checks the token to get the information
 ### continuoing on middlewares of authMiddleware
 
 GET /api/user/list
+
+### scripting the password
+
+- we need to save scripted password
+- first encrypted variable in create of usermodel
+- second decrypted variable in verify of userModel

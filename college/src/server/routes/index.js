@@ -1,5 +1,7 @@
 // routes/index.js
 
+//basic idea of using post with mongoose
+
 module.exports = function (app, User) {
   // GET ALL users
   app.get('/api/users', function (req, res) {
