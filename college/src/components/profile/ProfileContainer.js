@@ -1,7 +1,9 @@
 import React from 'react';
 import ProfilePresenter from './ProfilePresenter';
 
-function ProfileContainer() {
+function ProfileContainer(props) {
+  console.log('profile container');
+  console.log(props);
   return (
     <div>
       <ProfilePresenter />

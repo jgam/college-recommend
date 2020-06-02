@@ -4,6 +4,7 @@ import MatchingCollege from './components/matchingCollege';
 import Login from './components/login';
 import Signup from './components/signup';
 import Profile from './components/profile';
+import { Link } from 'react-router-dom';
 
 import { getLoginInfo } from './components/api/backendAPI';
 
@@ -45,9 +46,11 @@ function App() {
   //const login = check();
   console.log('hello');
   console.log(user);
+  console.log(authenticated);
 
   return (
     <Router>
+      <Link to='/profile'>Also here should be header</Link>
       <Switch>
         <AuthRoute
           authenticated={authenticated}
