@@ -173,3 +173,8 @@ Before, we need to save the token into cookie or web storage
 - ex) webTokens functions, backend call apis
 
 - with use Effect and getLoginInfo, I was able to see the current userData in homepage. Maybe add authenticated as a state to pass around authenticated variable to accessible state. \*Also, move the header to the home page is one thing we should do so from there, we can go anywhere
+
+### Now profile works with authenticated
+
+- need to fix the header
+- add colleges to user's favorite colleges
