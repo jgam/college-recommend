@@ -15,9 +15,11 @@ import {
   Redirect,
 } from 'react-router-dom';
 import Home from './components/Home';
+import Header from './components/Header';
 
 //<Route exact path={'/profile'} component={Profile} />;
 function App() {
+  console.log('got in app.js');
   //check if user is loggedin
   const [user, setUser] = useState(null);
   const authenticated = user != null;
@@ -50,7 +52,7 @@ function App() {
 
   return (
     <Router>
-      <Link to='/profile'>Also here should be header</Link>
+      <Header />
       <Switch>
         <AuthRoute
           authenticated={authenticated}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LoginPresenter from './LoginPresenter';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import { saveToken } from '../../auth/tokens';
 import { postLogin } from '../../components/api/backendAPI';
@@ -45,7 +46,7 @@ function LoginContainer() {
       console.log('error occurred in login');
       console.log(err);
     }
-    console.log('signup done');
+    console.log('login done');
   }
   return (
     <LoginPresenter

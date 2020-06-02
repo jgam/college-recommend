@@ -4,104 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faUniversity } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const Header = styled.div`
-  width: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  height: 100px;
-  align-items: center;
-  border-bottom: 1px solid #c7ecee;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: 'Chelsea Market';
-`;
-
-const Logo = styled.div`
-  height: 100px;
-  width: 100px;
-  font-size: 80px;
-  padding: 0 30px;
-`;
-const HeaderMenus = styled.div`
-  display: flex;
-  height: 100%;
-  align-items: center;
-`;
-
-const Search = styled.div`
-  display: flex;
-  height: 100%;
-  align-items: center;
-`;
-
-const MenuBox = styled.div`
-  margin: auto 10px;
-  padding: 0 20px;
-  cursor: pointer;
-  height: 100%;
-  display: flex;
-  align-items: center;
-`;
-
-const Login = styled.button``;
-
-const SearchCustomer = styled.div`
-  margin: 0 10px;
-  cursor: pointer;
-  height: 100%;
-  display: flex;
-  align-items: center;
-`;
-
-const SearchIcon = styled.div`
-  margin: 0 10px;
-  cursor: pointer;
-  height: 100%;
-  display: flex;
-  align-items: center;
-`;
-
 function HomePresenter() {
   //check webtoken to say hello or login button
 
-  return (
-    <>
-      <head>
-        <meta charSet='UTF-8'></meta>
-
-        <link
-          href='https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap'
-          rel='stylesheet'
-        ></link>
-      </head>
-      <div>
-        <Header>
-          <Logo>
-            <FontAwesomeIcon icon={faUniversity} />
-          </Logo>
-          <HeaderMenus>
-            <MenuBox>Schools</MenuBox>
-            <MenuBox>My Schools</MenuBox>
-            <MenuBox>IR</MenuBox>
-            <MenuBox>SNS</MenuBox>
-            <MenuBox>RECRUIT</MenuBox>
-          </HeaderMenus>
-          <Search>
-            <Login>
-              <Link to={'/login'}>Login</Link>
-            </Login>
-            <SearchCustomer>CUSTOMER</SearchCustomer>
-            <SearchIcon>
-              <FontAwesomeIcon icon={faSearch} />
-            </SearchIcon>
-          </Search>
-        </Header>
-        <div className='content'>content</div>
-        <div className='nav'>footer</div>
-      </div>
-    </>
-  );
+  return <div>hello Presenter Home</div>;
 }
 
 export default HomePresenter;
