@@ -63,6 +63,8 @@ const SearchIcon = styled.div`
 `;
 
 function HomePresenter() {
+  //check webtoken to say hello or login button
+
   return (
     <>
       <head>
@@ -79,8 +81,8 @@ function HomePresenter() {
             <FontAwesomeIcon icon={faUniversity} />
           </Logo>
           <HeaderMenus>
-            <MenuBox>COMPNAY</MenuBox>
-            <MenuBox>BRANDS</MenuBox>
+            <MenuBox>Schools</MenuBox>
+            <MenuBox>My Schools</MenuBox>
             <MenuBox>IR</MenuBox>
             <MenuBox>SNS</MenuBox>
             <MenuBox>RECRUIT</MenuBox>

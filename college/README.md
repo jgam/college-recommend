@@ -157,3 +157,14 @@ Before, we need to save the token into cookie or web storage
 2. login
 
 - after login successfully, save the token to the local storage
+
+### Now the token is done what next?
+
+- using the token, get the info from backend server. However, is this really efficient?
+  => lets just build from what I know and should comeback
+
+## 20200602
+
+### using profile component, allow login access from the user
+
+- first we need authRoute to specify if this is valid route
