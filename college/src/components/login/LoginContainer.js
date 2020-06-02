@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 import { saveToken } from '../../auth/tokens';
+import { postLogin } from '../../components/api/backendAPI';
 
 const initialFormData = {
   useranme: '',
@@ -27,16 +28,12 @@ function LoginContainer() {
 
     console.log('im in handlesubmit');
     try {
-      var config = {
-        headers: { 'Access-Control-Allow-Origin': '*' },
-      };
+      //postLogin module
       const {
         data: { token },
-      } = await axios.post(
-        'http://localhost:5000/api/auth/login',
+      } = await postLogin({
         loginData,
-        config
-      );
+      });
       console.log('try done safely');
       console.log(token);
       //save Token to localStorage

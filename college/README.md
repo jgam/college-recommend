@@ -171,3 +171,5 @@ Before, we need to save the token into cookie or web storage
 - with bunch of api calls, we can receive user data but first need to modulize those api calls separated in each component
 
 - ex) webTokens functions, backend call apis
+
+- with use Effect and getLoginInfo, I was able to see the current userData in homepage. Maybe add authenticated as a state to pass around authenticated variable to accessible state. \*Also, move the header to the home page is one thing we should do so from there, we can go anywhere

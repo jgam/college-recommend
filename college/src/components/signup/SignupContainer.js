@@ -3,6 +3,8 @@ import SignupPresenter from './SignupPresenter';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
+import { postSignup } from '../api/backendAPI';
+
 const initialFormData = {
   username: '',
   password: '',
@@ -25,14 +27,8 @@ function SignupContainer() {
 
     console.log('im in handlesubmit');
     try {
-      var config = {
-        headers: { 'Access-Control-Allow-Origin': '*' },
-      };
-      var token = await axios.post(
-        'http://localhost:5000/api/auth/register',
-        SignupData,
-        config
-      );
+      //postSignup module
+      var token = await postSignup({ SignupData });
       console.log('try done safely');
       console.log(token);
 
