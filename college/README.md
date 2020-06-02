@@ -178,3 +178,7 @@ Before, we need to save the token into cookie or web storage
 
 - need to fix the header
 - add colleges to user's favorite colleges
+
+problem: currently, I am redirecting to / which is home component. However, in doing so, the login check login in app.js doesn't work because i automatically redirect. Therefore, I need contextAPI and redux to fix that.
+
+### Redux or Context API integration
