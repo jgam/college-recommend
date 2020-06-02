@@ -168,3 +168,6 @@ Before, we need to save the token into cookie or web storage
 ### using profile component, allow login access from the user
 
 - first we need authRoute to specify if this is valid route
+- with bunch of api calls, we can receive user data but first need to modulize those api calls separated in each component
+
+- ex) webTokens functions, backend call apis
