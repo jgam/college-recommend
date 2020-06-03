@@ -87,13 +87,17 @@ function HeaderPresenter() {
           </HeaderMenus>
           <Search>
             <Login>
-              <Link to={'/login'}>Login</Link>
+              {auth ? (
+                <Link to={'/logout'}>Logout</Link>
+              ) : (
+                <Link to={'/login'}>Login</Link>
+              )}
             </Login>
             <SearchCustomer>CUSTOMER</SearchCustomer>
             <SearchIcon>
               <FontAwesomeIcon icon={faSearch} />
             </SearchIcon>
-            <Link to='/profile'>Profiles</Link>
+            {auth ? <Link to='/profile'>Profiles</Link> : ''}
           </Search>
         </Header>
       </div>
