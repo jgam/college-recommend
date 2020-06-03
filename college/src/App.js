@@ -43,8 +43,8 @@ function App() {
 
   return (
     <Router>
-      <Header />
       <AuthProvider>
+        <Header />
         <Switch>
           <AuthRoute
             authenticated={auth}

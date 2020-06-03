@@ -65,14 +65,6 @@ const SearchIcon = styled.div`
 function HeaderPresenter() {
   return (
     <>
-      <head>
-        <meta charSet='UTF-8'></meta>
-
-        <link
-          href='https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap'
-          rel='stylesheet'
-        ></link>
-      </head>
       <div>
         <Header>
           <Logo>
