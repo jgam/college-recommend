@@ -7,6 +7,8 @@ import { Redirect } from 'react-router-dom';
 import { saveToken } from '../../auth/tokens';
 import { postLogin } from '../../components/api/backendAPI';
 
+import AuthContext from '../../contexts/AuthContext';
+
 const initialFormData = {
   useranme: '',
   password: '',
@@ -16,6 +18,11 @@ function LoginContainer() {
   const history = useHistory();
   //save the token in the web
   const [loginData, setLoginData] = useState(initialFormData);
+  const { auth, getAuth, setAuth } = useContext(AuthContext);
+  console.log('in login container');
+  console.log(auth);
+  console.log(setAuth);
+  console.log(getAuth);
 
   function handleChange(e) {
     setLoginData({
@@ -23,14 +30,13 @@ function LoginContainer() {
       [e.target.name]: e.target.value,
     });
   }
-  const loginStatus = useContext(ThemeContext);
-  console.log(loginStatus);
+  //   const loginStatus = useContext(ThemeContext);
+  //   console.log(loginStatus);
 
   async function handleSubmit(e) {
     e.preventDefault();
     //get context
 
-    console.log('im in handlesubmit');
     try {
       //postLogin module
       const {
@@ -38,12 +44,14 @@ function LoginContainer() {
       } = await postLogin({
         loginData,
       });
-      console.log('try done safely');
-      console.log(token);
       //save Token to localStorage
+
+      //here check if statement with token
       saveToken(token);
       //set true for authenticated
-
+      setAuth();
+      console.log('after set Auth');
+      console.log(auth);
       //redirect to login page
       history.push('/');
     } catch (err) {

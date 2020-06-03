@@ -17,7 +17,8 @@ import {
 import Home from './components/Home';
 import Header from './components/Header';
 
-import { AuthContext } from './contexts/authContext';
+import AuthContext from './contexts/AuthContext';
+import AuthProvider from './components/contexts/Auth.Context';
 
 //now need to use context
 
@@ -27,8 +28,8 @@ function App() {
 
   //check if user is loggedin
   const [user, setUser] = useState(null);
-  const authenticated = user != null;
-
+  //const authenticated = user != null;
+  const { auth, setAuth, getAuth } = useContext(AuthContext);
   //here u need to call once everytime reloads, so useEffect
   //here get the token from the web
   //null if not found
@@ -46,19 +47,18 @@ function App() {
   }, []);
 
   //const login = check();
-
-  const AuthContext = React.createContext({
-    auth: false,
-    setAuth: () => {},
-  });
-  const ThemeContext = createContext(authenticated);
+  console.log('current Auth in app js');
+  console.log(getAuth());
+  console.log('auth variable');
+  console.log(auth);
+  //const ThemeContext = createContext(authenticated);
   return (
     <Router>
       <Header />
-      <ThemeContext.Provider value={authenticated}>
+      <AuthProvider>
         <Switch>
           <AuthRoute
-            authenticated={authenticated}
+            authenticated={getAuth()}
             path='/profile'
             render={(props) => <Profile user={user} {...props} />}
           />
@@ -68,7 +68,7 @@ function App() {
           <Route exact path={'/signup'} component={Signup} />
           <Redirect from={'*'} to={'/'} />
         </Switch>
-      </ThemeContext.Provider>
+      </AuthProvider>
     </Router>
   );
 }
