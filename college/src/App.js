@@ -24,15 +24,10 @@ import AuthProvider from './components/contexts/Auth.Context';
 
 //<Route exact path={'/profile'} component={Profile} />;
 function App() {
-  console.log('got in app.js');
-
-  //check if user is loggedin
   const [user, setUser] = useState(null);
   //const authenticated = user != null;
   const { auth, setAuth, getAuth } = useContext(AuthContext);
-  //here u need to call once everytime reloads, so useEffect
-  //here get the token from the web
-  //null if not found
+
   const token = window.localStorage.getItem('token');
 
   useEffect(() => {
@@ -46,19 +41,13 @@ function App() {
     });
   }, []);
 
-  //const login = check();
-  console.log('current Auth in app js');
-  console.log(getAuth());
-  console.log('auth variable');
-  console.log(auth);
-  //const ThemeContext = createContext(authenticated);
   return (
     <Router>
       <Header />
       <AuthProvider>
         <Switch>
           <AuthRoute
-            authenticated={getAuth()}
+            authenticated={auth}
             path='/profile'
             render={(props) => <Profile user={user} {...props} />}
           />
