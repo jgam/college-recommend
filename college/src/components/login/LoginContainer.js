@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import LoginPresenter from './LoginPresenter';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
@@ -23,9 +23,12 @@ function LoginContainer() {
       [e.target.name]: e.target.value,
     });
   }
+  const loginStatus = useContext(ThemeContext);
+  console.log(loginStatus);
 
   async function handleSubmit(e) {
     e.preventDefault();
+    //get context
 
     console.log('im in handlesubmit');
     try {
@@ -39,6 +42,7 @@ function LoginContainer() {
       console.log(token);
       //save Token to localStorage
       saveToken(token);
+      //set true for authenticated
 
       //redirect to login page
       history.push('/');

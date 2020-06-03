@@ -33,43 +33,42 @@ function App() {
   //here get the token from the web
   //null if not found
   const token = window.localStorage.getItem('token');
+
   useEffect(() => {
     console.log('in useEffect boi!');
     async function getUserData() {
-      console.log('before awaity call');
       const response = await getLoginInfo({ token });
-      console.log('after await call');
       return response;
     }
     getUserData().then((response) => {
-      console.log('here we can use the data');
-      console.log(response.data.info.username);
       setUser(response.data.info.username);
-      console.log('end of the data');
     });
-    console.log('right before is the promise data');
   }, []);
 
   //const login = check();
-  console.log('hello');
-  console.log(user);
-  console.log(authenticated);
 
+  const AuthContext = React.createContext({
+    auth: false,
+    setAuth: () => {},
+  });
+  const ThemeContext = createContext(authenticated);
   return (
     <Router>
       <Header />
-      <Switch>
-        <AuthRoute
-          authenticated={authenticated}
-          path='/profile'
-          render={(props) => <Profile user={user} {...props} />}
-        />
-        <Route exact path={'/'} component={Home} />
-        <Route exact path={'/college'} component={MatchingCollege} />
-        <Route exact path={'/login'} component={Login} />
-        <Route exact path={'/signup'} component={Signup} />
-        <Redirect from={'*'} to={'/'} />
-      </Switch>
+      <ThemeContext.Provider value={authenticated}>
+        <Switch>
+          <AuthRoute
+            authenticated={authenticated}
+            path='/profile'
+            render={(props) => <Profile user={user} {...props} />}
+          />
+          <Route exact path={'/'} component={Home} />
+          <Route exact path={'/college'} component={MatchingCollege} />
+          <Route exact path={'/login'} component={Login} />
+          <Route exact path={'/signup'} component={Signup} />
+          <Redirect from={'*'} to={'/'} />
+        </Switch>
+      </ThemeContext.Provider>
     </Router>
   );
 }
