@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext, createContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import AuthRoute from './auth/AuthRoute';
 import MatchingCollege from './components/matchingCollege';
 import Login from './components/login';
 import Signup from './components/signup';
 import Profile from './components/profile';
-import { Link } from 'react-router-dom';
 
 import { getLoginInfo } from './components/api/backendAPI';
 
@@ -24,12 +23,14 @@ import AuthProvider from './components/contexts/Auth.Context';
 
 //<Route exact path={'/profile'} component={Profile} />;
 function App() {
+  //This loginc all needs to be in context?
   const [user, setUser] = useState(null);
   //const authenticated = user != null;
-  const { auth, setAuth, getAuth } = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
 
   const token = window.localStorage.getItem('token');
 
+  //maybe use Context for this as well
   useEffect(() => {
     console.log('in useEffect boi!');
     async function getUserData() {

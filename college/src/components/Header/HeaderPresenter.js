@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faUniversity } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
+import { useContext } from 'react';
+import AuthContext from '../../contexts/AuthContext';
+
 const Header = styled.div`
   width: 100%;
   background-color: white;
@@ -63,6 +66,11 @@ const SearchIcon = styled.div`
 `;
 
 function HeaderPresenter() {
+  //if logged in then I need to put logout
+  const { auth } = useContext(AuthContext);
+
+  //with this compare login and logout
+
   return (
     <>
       <div>

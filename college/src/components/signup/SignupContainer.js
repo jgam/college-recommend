@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import SignupPresenter from './SignupPresenter';
-import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 import { postSignup } from '../api/backendAPI';

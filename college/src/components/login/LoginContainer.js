@@ -1,8 +1,6 @@
 import React, { useState, useContext } from 'react';
 import LoginPresenter from './LoginPresenter';
-import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
 
 import { saveToken } from '../../auth/tokens';
 import { postLogin } from '../../components/api/backendAPI';
@@ -18,11 +16,7 @@ function LoginContainer() {
   const history = useHistory();
   //save the token in the web
   const [loginData, setLoginData] = useState(initialFormData);
-  const { auth, getAuth, setAuth } = useContext(AuthContext);
-  console.log('in login container');
-  console.log(auth);
-  console.log(setAuth);
-  console.log(getAuth);
+  const { setAuth } = useContext(AuthContext);
 
   function handleChange(e) {
     setLoginData({
@@ -49,9 +43,7 @@ function LoginContainer() {
       //here check if statement with token
       saveToken(token);
       //set true for authenticated
-      setAuth();
-      console.log('after set Auth');
-      console.log(auth);
+      setAuth(true);
       //redirect to login page
       history.push('/');
     } catch (err) {

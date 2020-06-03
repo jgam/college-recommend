@@ -184,3 +184,5 @@ problem: currently, I am redirecting to / which is home component. However, in d
 ### Redux or Context API integration
 
 - context API. problem is in App.js still, the auth is saved as false even when we change it...
+
+- call Context within the component and fixed the problem. Based on that, need to change Headers.

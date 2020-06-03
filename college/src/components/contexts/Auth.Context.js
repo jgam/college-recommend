@@ -8,25 +8,28 @@ import AuthContext from '../../contexts/AuthContext';
 
 const AuthProvider = ({ children }) => {
   //function we will use in child components
-  const setAuth = () => {
+  const setAuth = (condition) => {
     setAuthContext((prevState) => {
       console.log('in setAuth Context function');
       console.log(prevState);
+      if (condition) {
+        console.log('condition is here');
+        return {
+          ...prevState,
+          auth: true,
+        };
+      }
+      console.log('false condition');
       return {
         ...prevState,
-        auth: !prevState.auth,
+        auth: false,
       };
     });
-  };
-
-  const getAuth = () => {
-    return auth;
   };
 
   const initialAuth = {
     auth: false,
     setAuth,
-    getAuth,
   };
 
   const [auth, setAuthContext] = useState(initialAuth);
