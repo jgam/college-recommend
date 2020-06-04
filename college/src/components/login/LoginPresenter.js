@@ -14,7 +14,7 @@ function LoginPresenter({ loginData, handleChange, handleSubmit }) {
           onChange={handleChange}
         />
         <input
-          type={'text'}
+          type={'password'}
           placeholder={'type in pw'}
           value={loginData.pw}
           name={'password'}

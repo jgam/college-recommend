@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import LoginPresenter from './LoginPresenter';
 import { useHistory } from 'react-router-dom';
 
-import { saveToken } from '../../auth/tokens';
+import { saveToken, getToken } from '../../auth/tokens';
 import { postLogin } from '../../components/api/backendAPI';
 
 import AuthContext from '../../contexts/AuthContext';

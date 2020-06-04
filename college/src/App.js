@@ -20,6 +20,7 @@ import Header from './components/Header';
 import AuthContext from './contexts/AuthContext';
 import AuthProvider from './components/contexts/Auth.Context';
 
+import { getToken } from './auth/tokens';
 //now need to use context
 
 //<Route exact path={'/profile'} component={Profile} />;
@@ -29,7 +30,7 @@ function App() {
   //const authenticated = user != null;
   const { auth } = useContext(AuthContext);
 
-  const token = window.localStorage.getItem('token');
+  const token = getToken('token');
 
   //maybe use Context for this as well
   useEffect(() => {
