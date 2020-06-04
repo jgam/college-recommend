@@ -186,3 +186,14 @@ problem: currently, I am redirecting to / which is home component. However, in d
 - context API. problem is in App.js still, the auth is saved as false even when we change it...
 
 - call Context within the component and fixed the problem. Based on that, need to change Headers.
+
+- Context done and need to fix small things such as password and session or cookies for saving password
+
+## 20200604
+
+### Several Fixes
+
+- input password
+- localstorage to sessions or cookies
+
+### adding like functionalities for colleges when user True
