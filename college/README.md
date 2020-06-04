@@ -194,6 +194,6 @@ problem: currently, I am redirecting to / which is home component. However, in d
 ### Several Fixes
 
 - input password(fixed)
-- localstorage to sessions or cookies
+- localstorage to sessions or cookies(fixed)
 
 ### adding like functionalities for colleges when user True
