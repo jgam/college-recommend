@@ -4,6 +4,7 @@ import MatchingCollege from './components/matchingCollege';
 import Login from './components/login';
 import Signup from './components/signup';
 import Profile from './components/profile';
+import Logout from './components/logout';
 
 import { getLoginInfo } from './components/api/backendAPI';
 
@@ -56,6 +57,7 @@ function App() {
           <Route exact path={'/college'} component={MatchingCollege} />
           <Route exact path={'/login'} component={Login} />
           <Route exact path={'/signup'} component={Signup} />
+          <Route exact path={'/logout'} component={Logout} />
           <Redirect from={'*'} to={'/'} />
         </Switch>
       </AuthProvider>
