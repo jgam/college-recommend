@@ -5,6 +5,7 @@ const AuthContext = createContext({
   colleges: [],
   setAuth: () => {},
   setColleges: () => {},
+  AddColleges: () => {},
 });
 
 export default AuthContext;

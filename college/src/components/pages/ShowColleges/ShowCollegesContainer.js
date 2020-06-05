@@ -5,7 +5,8 @@ import AuthContext from '../../../contexts/AuthContext';
 
 function ShowCollegesContainer({ colleges }) {
   //if checked then add to the database
-  const { auth } = useContext(AuthContext);
+  const { auth, AddColleges } = useContext(AuthContext);
+
   console.log('showcollegeasdfsfd container');
   console.log(auth);
   function addFav(id) {
@@ -21,6 +22,10 @@ function ShowCollegesContainer({ colleges }) {
     3. write to colleges to login ( this needs to be done never created)
     a. write colleges to db
     */
+
+    AddColleges(id);
+    console.log('after add colleges in showcolleges container');
+    console.log(auth);
   }
   return colleges.map((college, i) => (
     <ShowCollegePresenter
