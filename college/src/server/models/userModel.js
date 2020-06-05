@@ -11,22 +11,27 @@ var UserSchema = new Schema({
   username: String,
   password: String,
   name: String,
+  colleges: Object,
   createdAt: { type: Date, default: Date.now },
-  colleges: {},
 });
 
 //here create methods for UserSchema
-UserSchema.statics.create = function (name, username, password) {
+UserSchema.statics.create = function (name, username, password, colleges) {
   const encrypted = crypto
     .createHmac('sha1', config.secret)
     .update(password)
     .digest('base64');
+
   const user = new this({
     username,
     password: encrypted,
     name,
-    colleges: {},
+    colleges,
   });
+  console.log('userschema create function');
+  console.log(colleges);
+  console.log(user);
+
   return user.save();
 };
 

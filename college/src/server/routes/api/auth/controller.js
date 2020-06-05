@@ -2,16 +2,14 @@ const jwt = require('jsonwebtoken');
 const User = require('../../../models/userModel');
 
 exports.register = (req, res) => {
-  const { username, password, name } = req.body;
-  let newUser = null;
+  const { username, password, name, colleges } = req.body;
   //create a new user if does not exist
   const create = (user) => {
     if (user) {
       throw new Error('username exists');
       //return Promise.resolve(false);
     } else {
-      console.log('create done');
-      return User.create(name, username, password);
+      return User.create(name, username, password, { ids: ['init'] });
     }
   };
 
@@ -29,14 +27,11 @@ exports.register = (req, res) => {
   };
 
   User.findOneByUsername(username).then(create).then(respond).catch(onError);
-  console.log(User);
 };
 
 exports.login = (req, res) => {
   const { username, password } = req.body;
   const secret = req.app.get('jwt-secret');
-  console.log('secret');
-  console.log(secret);
 
   //check the user info & generate the jwt
   const check = (user) => {
@@ -46,11 +41,15 @@ exports.login = (req, res) => {
     } else {
       // user exists? check the password
       if (user.verify(password)) {
+        console.log('colleges');
+        console.log(user);
+        console.log(user.colleges);
         const p = new Promise((resolve, reject) => {
           jwt.sign(
             {
               _id: user._id,
               username: user.username,
+              colleges: user.colleges,
             },
             secret,
             {

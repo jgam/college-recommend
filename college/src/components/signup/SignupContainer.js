@@ -13,7 +13,6 @@ const initialFormData = {
 function SignupContainer() {
   let history = useHistory();
   const [SignupData, setSignupData] = useState(initialFormData);
-  console.log(SignupData);
   function handleChange(e) {
     setSignupData({
       ...SignupData,
@@ -28,9 +27,6 @@ function SignupContainer() {
     try {
       //postSignup module
       var token = await postSignup({ SignupData });
-      console.log('try done safely');
-      console.log(token);
-
       //redirect to login page
       history.push('/login');
     } catch (err) {
