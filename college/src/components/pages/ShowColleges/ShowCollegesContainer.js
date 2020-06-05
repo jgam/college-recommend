@@ -8,10 +8,11 @@ function ShowCollegesContainer({ colleges }) {
   const { auth } = useContext(AuthContext);
   console.log('showcollegeasdfsfd container');
   console.log(auth);
-  function addFav() {
+  function addFav(id) {
     console.log('addFav clicked');
     //add to colleges in user ID
-
+    console.log(id);
+    console.log('add fav closed');
     /* 
     1. get colleges
     a. get colleges from context
