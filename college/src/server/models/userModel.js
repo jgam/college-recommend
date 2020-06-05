@@ -12,6 +12,7 @@ var UserSchema = new Schema({
   password: String,
   name: String,
   createdAt: { type: Date, default: Date.now },
+  colleges: {},
 });
 
 //here create methods for UserSchema
@@ -24,6 +25,7 @@ UserSchema.statics.create = function (name, username, password) {
     username,
     password: encrypted,
     name,
+    colleges: {},
   });
   return user.save();
 };
