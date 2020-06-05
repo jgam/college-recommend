@@ -27,9 +27,21 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  const setColleges = ({ ids }) => {
+    console.log('in setCollleges');
+    console.log(ids);
+    setAuthContext((prevState) => {
+      return {
+        ...prevState,
+        colleges: ids,
+      };
+    });
+  };
+
   const initialAuth = {
     auth: false,
     setAuth,
+    setColleges,
   };
 
   const [auth, setAuthContext] = useState(initialAuth);

@@ -26,7 +26,8 @@ function SignupContainer() {
     console.log('im in handlesubmit');
     try {
       //postSignup module
-      var token = await postSignup({ SignupData });
+      await postSignup({ SignupData });
+
       //redirect to login page
       history.push('/login');
     } catch (err) {

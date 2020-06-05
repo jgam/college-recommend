@@ -5,7 +5,7 @@ import AuthContext from '../../../contexts/AuthContext';
 
 function ShowCollegesContainer({ colleges }) {
   //if checked then add to the database
-  const { auth, setAuth } = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
   console.log('showcollegeasdfsfd container');
   console.log(auth);
   function addFav() {

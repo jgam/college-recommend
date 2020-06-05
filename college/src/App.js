@@ -42,7 +42,7 @@ function App() {
     getUserData().then((response) => {
       setUser(response.data.info.username);
     });
-  }, []);
+  });
 
   return (
     <Router>

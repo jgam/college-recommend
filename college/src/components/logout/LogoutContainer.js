@@ -7,13 +7,17 @@ import { deleteToken } from '../../auth/tokens/index';
 
 function LogoutContainer() {
   //context set auth
-  const { auth, setAuth } = useContext(AuthContext);
+  const { setAuth, setColleges } = useContext(AuthContext);
   const history = useHistory();
   useEffect(() => {
     setAuth(false);
+    //db udpate last for colleges
+
+    //clear the colleges
+    setColleges({ ids: [] });
     deleteToken();
     history.push('/');
-  }, []);
+  });
 
   return (
     <div>

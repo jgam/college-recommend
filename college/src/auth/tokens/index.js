@@ -34,7 +34,7 @@ export function getToken(cname) {
   var ca = decodedCookie.split(';');
   for (var i = 0; i < ca.length; i++) {
     var c = ca[i];
-    if (c.slice(1, 7) == name) {
+    if (c.slice(1, 7) === name) {
       return c.slice(7);
     }
   }

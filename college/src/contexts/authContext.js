@@ -2,8 +2,9 @@ import { createContext } from 'react';
 
 const AuthContext = createContext({
   auth: false,
-  colleges: {},
+  colleges: [],
   setAuth: () => {},
+  setColleges: () => {},
 });
 
 export default AuthContext;
