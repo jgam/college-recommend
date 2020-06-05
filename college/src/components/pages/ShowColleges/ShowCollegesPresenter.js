@@ -17,7 +17,14 @@ function ShowCollegesPresenter({ index, college, auth, addFav, added }) {
         Added ? (
           <button>Added already!</button>
         ) : (
-          <button onClick={() => addFav(collegeID)}>add to Favorites</button>
+          <button
+            onClick={() => {
+              addFav(collegeID);
+              setAdded(!Added);
+            }}
+          >
+            add to Favorites
+          </button>
         )
       ) : (
         ''

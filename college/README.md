@@ -200,5 +200,15 @@ problem: currently, I am redirecting to / which is home component. However, in d
 
 ### adding like functionalities for colleges when user True
 
-- using context, if like button clicked, then add it to database
-- if liked, then add delete
+- update colleges to the backend only occurs in my schools page
+- use context to save the colleges ids
+
+- first, when we login, we fetch colleges info and save it to context
+- then in matching college, we define which are already selected colleges
+- pass it to show colleges
+
+- when canges occur in show colleges, update context
+- when going to myschools, always look at context-colleges and update if different, else jsut display with detailed information
+
+problems:
+[colleges] Context addcolleges done now need to write deleteColleges function in authContext. also need to check where I left offf with seting auth.colleges to {colleges:[init]
