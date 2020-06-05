@@ -45,6 +45,8 @@ function LoginContainer() {
       //set true for authenticated
       setAuth(true);
       //redirect to login page
+      //here you call with the token and get the information of colleges from backend and set it with setColleges();
+      //here start fixing
       history.push('/');
     } catch (err) {
       console.log('error occurred in login');
