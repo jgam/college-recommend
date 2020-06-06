@@ -30,6 +30,7 @@ exports.register = (req, res) => {
 };
 
 exports.login = (req, res) => {
+  console.log('in login');
   const { username, password } = req.body;
   const secret = req.app.get('jwt-secret');
 
@@ -71,9 +72,10 @@ exports.login = (req, res) => {
   };
 
   //respond the token
-  const respond = () => {
+  const respond = (token) => {
     res.json({
-      message: 'colleges updated properly',
+      message: 'token generated properly',
+      token,
     });
   };
 
@@ -96,7 +98,9 @@ exports.check = (req, res) => {
 };
 
 exports.collegesUpdate = (req, res) => {
+  console.log('in colleges update');
   console.log('in colleges update of controller');
+  console.log(req.body);
   const { id, updatedColleges, name } = req.body;
   console.log(id);
   console.log(updatedColleges);
@@ -120,6 +124,7 @@ exports.collegesUpdate = (req, res) => {
   User.findByIdAndUpdate(
     id,
     {
+      name: name,
       colleges: {
         ids: updatedColleges,
       },

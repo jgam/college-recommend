@@ -42,7 +42,7 @@ function MatchingCollegeContainer() {
     console.log(formData);
     getColleges(params).then((data) => {
       console.log(data.data.colleges);
-      //here I should update state to give this to college presenter
+      //here need to check colleges if it is in db.
       setFormData({ ...formData, colleges: data.data.colleges });
     });
     //return colleges.data.colleges;
@@ -90,7 +90,7 @@ function MatchingCollegeContainer() {
         handleSubmit={handleSubmit}
       />
       {colleges.length !== undefined ? (
-        <ShowColleges colleges={colleges} />
+        <ShowColleges Searchedcolleges={colleges} />
       ) : (
         ''
       )}

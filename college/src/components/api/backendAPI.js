@@ -22,3 +22,13 @@ export const getLoginInfo = function (params) {
   newConfig.headers['x-access-token'] = params.token;
   return backendAPI.get('/check', newConfig);
 };
+
+export const updateColleges = (params) =>
+  backendAPI.post('/colleges', params, config);
+//colleges data
+/*
+{
+	"id": "5eda00f19b3757d3fd7e9b63",
+    "updatedColleges": ["12341","23456"]
+}
+*/
