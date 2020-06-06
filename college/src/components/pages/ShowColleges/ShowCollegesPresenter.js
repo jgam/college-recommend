@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   background-image: url(${(props) => (props.logo ? props.logo : '')});
 `;
 
-function ShowCollegesPresenter({ index, college, auth, addFav, added }) {
+function ShowCollegesPresenter({ index, college, auth, addFav, deleteFav }) {
   //console.log(colleges);
   //here only show the colleges with presenter
   const [Added, setAdded] = useState(false);
@@ -15,7 +15,14 @@ function ShowCollegesPresenter({ index, college, auth, addFav, added }) {
       <h2>{college.name}</h2>
       {auth ? (
         Added ? (
-          <button>Added already!</button>
+          <button
+            onClick={() => {
+              deleteFav(collegeID);
+              setAdded(!Added);
+            }}
+          >
+            Added already!
+          </button>
         ) : (
           <button
             onClick={() => {

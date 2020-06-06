@@ -5,15 +5,9 @@ import AuthContext from '../../../contexts/AuthContext';
 
 function ShowCollegesContainer({ colleges }) {
   //if checked then add to the database
-  const { auth, AddColleges } = useContext(AuthContext);
+  const { auth, AddColleges, DeleteColleges } = useContext(AuthContext);
 
-  console.log('showcollegeasdfsfd container');
-  console.log(auth);
   function addFav(id) {
-    console.log('addFav clicked');
-    //add to colleges in user ID
-    console.log(id);
-    console.log('add fav closed');
     /* 
     1. get colleges
     a. get colleges from context
@@ -24,8 +18,9 @@ function ShowCollegesContainer({ colleges }) {
     */
 
     AddColleges(id);
-    console.log('after add colleges in showcolleges container');
-    console.log(auth);
+  }
+  function deleteFav(id) {
+    DeleteColleges(id);
   }
   return colleges.map((college, i) => (
     <ShowCollegePresenter
@@ -33,6 +28,7 @@ function ShowCollegesContainer({ colleges }) {
       college={college}
       auth={auth}
       addFav={addFav}
+      deleteFav={deleteFav}
     />
   ));
   //return <ShowCollegePresenter colleges={colleges} />;

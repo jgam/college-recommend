@@ -42,7 +42,7 @@ const AuthProvider = ({ children }) => {
     console.log('add colleges in authcontext');
     console.log(collegeId);
     console.log('addColleges in authcontext');
-    console.log(auth);
+    console.log(auth.colleges);
     var newCollege = auth.colleges;
     newCollege.push(collegeId);
     setAuthContext((prevState) => {
@@ -53,13 +53,26 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  const DeleteColleges = (college) => {};
+  const DeleteColleges = (collegeId) => {
+    console.log('deleted colleges');
+    console.log(auth.colleges);
+    var newCollege = auth.colleges.filter((item) => item !== collegeId);
+    console.log(newCollege);
+    setAuthContext((prevState) => {
+      return {
+        ...prevState,
+        colleges: newCollege,
+      };
+    });
+  };
+
   const initialAuth = {
     auth: false,
     colleges: [],
     setAuth,
     setColleges,
     AddColleges,
+    DeleteColleges,
   };
 
   const [auth, setAuthContext] = useState(initialAuth);
