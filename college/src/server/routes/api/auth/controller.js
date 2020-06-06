@@ -117,7 +117,15 @@ exports.collegesUpdate = (req, res) => {
       message: error.message,
     });
   };
-  User.findByIdAndUpdate(id, { name: name }, options)
+  User.findByIdAndUpdate(
+    id,
+    {
+      colleges: {
+        ids: updatedColleges,
+      },
+    },
+    options
+  )
     .then(respond)
     .catch(onError);
   //firs try with this and implement custom created function
