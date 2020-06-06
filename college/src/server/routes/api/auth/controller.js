@@ -71,10 +71,9 @@ exports.login = (req, res) => {
   };
 
   //respond the token
-  const respond = (token) => {
+  const respond = () => {
     res.json({
-      message: 'logged in successfully with jwt',
-      token,
+      message: 'colleges updated properly',
     });
   };
 
@@ -94,6 +93,35 @@ exports.check = (req, res) => {
     success: true,
     info: req.decoded,
   });
+};
+
+exports.collegesUpdate = (req, res) => {
+  console.log('in colleges update of controller');
+  const { id, updatedColleges, name } = req.body;
+  console.log(id);
+  console.log(updatedColleges);
+
+  var options = {
+    new: true,
+    lean: true,
+  };
+
+  const respond = () => {
+    res.json({
+      message: 'colleges updated properly',
+    });
+  };
+  const onError = (error, result) => {
+    res.status(403).json({
+      result: result,
+      message: error.message,
+    });
+  };
+  User.findByIdAndUpdate(id, { name: name }, options)
+    .then(respond)
+    .catch(onError);
+  //firs try with this and implement custom created function
+  console.log('done with user findbyandupdate');
 };
 /*
 exports.check = (req, res) => {

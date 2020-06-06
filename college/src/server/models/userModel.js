@@ -42,6 +42,13 @@ UserSchema.statics.findOneByUsername = function (username) {
   }).exec();
 };
 
+UserSchema.statics.updateColleges = function (id, updatedObj) {
+  //here is is _id of db id so we need to save that as well
+  return this.findByIdAndUpdate(id, {
+    updateObj,
+  });
+};
+
 //verify the pw of the user document
 UserSchema.methods.verify = function (password) {
   const decrypted = crypto

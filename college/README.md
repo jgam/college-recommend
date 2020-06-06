@@ -212,3 +212,10 @@ problem: currently, I am redirecting to / which is home component. However, in d
 
 problems:
 [colleges] Context addcolleges done now need to write deleteColleges function in authContext. also need to check where I left offf with seting auth.colleges to {colleges:[init]
+
+## 20200606
+
+### connecting with backend
+
+- need to think where to add backend for updating the database
+- before, need to declare functions for PUT method.

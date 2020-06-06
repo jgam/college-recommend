@@ -6,5 +6,5 @@ router.post('/register', controller.register);
 router.post('/login', controller.login);
 router.use('/check', authMiddleware);
 router.get('/check', controller.check);
-
+router.post('/colleges', controller.collegesUpdate);
 module.exports = router;

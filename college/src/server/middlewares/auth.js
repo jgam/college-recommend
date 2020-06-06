@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 const authMiddleware = (req, res, next) => {
+  console.log('in authmiddleware');
   // read the token from header or url
   const token = req.headers['x-access-token'] || req.query.token;
 
