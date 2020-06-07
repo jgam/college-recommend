@@ -211,7 +211,7 @@ problem: currently, I am redirecting to / which is home component. However, in d
 - when going to myschools, always look at context-colleges and update if different, else jsut display with detailed information
 
 problems:
-[colleges] Context addcolleges done now need to write deleteColleges function in authContext. also need to check where I left offf with seting auth.colleges to {colleges:[init]
+[colleges] Context addcolleges done now need to write deleteColleges function in authContext. also need to check where I left offf with seting auth.colleges to {colleges:[init] fixed
 
 ## 20200606
 
