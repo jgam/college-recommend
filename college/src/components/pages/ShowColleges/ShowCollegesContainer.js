@@ -41,7 +41,7 @@ function ShowCollegesContainer({ Searchedcolleges }) {
     await updateColleges(tempData);
   }
   async function deleteFav(collegeid) {
-    DeleteColleges(collegeid);
+    DeleteColleges(colleges, collegeid);
     var tempData = {
       id: id,
       updatedColleges: colleges,

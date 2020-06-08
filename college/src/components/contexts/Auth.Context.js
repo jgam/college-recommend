@@ -58,15 +58,19 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  const DeleteColleges = (collegeId) => {
+  const DeleteColleges = (colleges, collegeId) => {
     // console.log('deleted colleges');
     // console.log(auth.colleges);
-    var newCollege = auth.colleges.filter((item) => item !== collegeId);
-
+    console.log('deltecolelges function');
+    console.log(colleges);
+    //colleges.filter((item) => item !== collegeId);
+    colleges.splice(colleges.indexOf(collegeId), 1);
+    console.log('after filter');
+    console.log(colleges);
     setAuthContext((prevState) => {
       return {
         ...prevState,
-        colleges: newCollege,
+        colleges: colleges,
       };
     });
   };
