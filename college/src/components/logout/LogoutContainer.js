@@ -7,7 +7,7 @@ import { deleteToken } from '../../auth/tokens/index';
 
 function LogoutContainer() {
   //context set auth
-  const { setAuth, setColleges } = useContext(AuthContext);
+  const { setAuth, setColleges, LogoutData } = useContext(AuthContext);
   const history = useHistory();
   useEffect(() => {
     setAuth(false);

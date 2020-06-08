@@ -101,7 +101,7 @@ exports.collegesUpdate = (req, res) => {
   console.log('in colleges update');
   console.log('in colleges update of controller');
   console.log(req.body);
-  const { id, updatedColleges, name } = req.body;
+  const { id, updatedColleges } = req.body;
   console.log(id);
   console.log(updatedColleges);
 
@@ -124,7 +124,6 @@ exports.collegesUpdate = (req, res) => {
   User.findByIdAndUpdate(
     id,
     {
-      name: name,
       colleges: {
         ids: updatedColleges,
       },

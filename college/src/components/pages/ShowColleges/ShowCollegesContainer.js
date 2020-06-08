@@ -10,6 +10,10 @@ function ShowCollegesContainer({ Searchedcolleges }) {
   const { id, auth, colleges, AddColleges, DeleteColleges } = useContext(
     AuthContext
   );
+  console.log(
+    'current colleges after login in showcollegescontainer..should be init'
+  );
+  console.log(colleges);
 
   async function addFav(collegeid) {
     /* 
@@ -22,21 +26,21 @@ function ShowCollegesContainer({ Searchedcolleges }) {
     */
     console.log('before calling adding');
     console.log(colleges);
-    AddColleges(collegeid);
+    AddColleges(colleges, collegeid);
     console.log('in showcolelge container');
     console.log(colleges);
+    console.log(id);
 
     //now from the context, we need to find id of current user
     var tempData = {
       id: id,
       updatedColleges: colleges,
-      name: 'gamjeonghan',
     };
     console.log('updateColleges called!');
     console.log(tempData);
     await updateColleges(tempData);
   }
-  function deleteFav(collegeid) {
+  async function deleteFav(collegeid) {
     DeleteColleges(collegeid);
     var tempData = {
       id: id,

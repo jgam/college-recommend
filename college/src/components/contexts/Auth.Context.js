@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import AuthContext from '../../contexts/AuthContext';
+import AuthRoute from '../../auth/AuthRoute';
 
 //first declare functions and do state or setstate later
 //need to use hooks!
@@ -40,17 +41,19 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  const AddColleges = (collegeId) => {
+  const AddColleges = (colleges, collegeId) => {
     // console.log('add colleges in authcontext');
     // console.log(collegeId);
     // console.log('addColleges in authcontext');
     // console.log(auth.colleges);
-    var newCollege = auth.colleges;
-    newCollege.push(collegeId);
+    console.log(colleges);
+    console.log(collegeId);
+    colleges.push(collegeId);
+    console.log(colleges);
     setAuthContext((prevState) => {
       return {
         ...prevState,
-        colleges: newCollege,
+        colleges: colleges,
       };
     });
   };
@@ -78,6 +81,8 @@ const AuthProvider = ({ children }) => {
   };
 
   const [auth, setAuthContext] = useState(initialAuth);
+  console.log('in auth.context auth colleges');
+  console.log(auth);
 
   return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
 };

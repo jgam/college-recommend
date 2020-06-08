@@ -51,7 +51,8 @@ function LoginContainer() {
       const value = await getLoginInfo({ token });
       //context savings
       setAuth(true, value.data.info._id);
-
+      console.log('in login container');
+      console.log(value.data.info.colleges);
       setColleges(value.data.info.colleges);
       //console.log(value.data.info.colleges);
       history.push('/');
