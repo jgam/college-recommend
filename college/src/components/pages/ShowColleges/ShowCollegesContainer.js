@@ -56,6 +56,7 @@ function ShowCollegesContainer({ Searchedcolleges }) {
       auth={auth}
       addFav={addFav}
       deleteFav={deleteFav}
+      added={Searchedcollege.collegeUnitId in colleges}
     />
   ));
   //return <ShowCollegePresenter colleges={colleges} />;

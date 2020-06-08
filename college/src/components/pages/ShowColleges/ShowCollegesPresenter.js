@@ -5,10 +5,19 @@ const Wrapper = styled.div`
   background-image: url(${(props) => (props.logo ? props.logo : '')});
 `;
 
-function ShowCollegesPresenter({ index, college, auth, addFav, deleteFav }) {
+function ShowCollegesPresenter({
+  index,
+  college,
+  auth,
+  addFav,
+  deleteFav,
+  added,
+}) {
   //console.log(colleges);
   //here only show the colleges with presenter
-  const [Added, setAdded] = useState(false);
+  console.log('show college presenter?');
+  console.log(added);
+  const [Added, setAdded] = useState(added);
   const collegeID = college.collegeUnitId;
   return (
     <Wrapper key={index} logo={college.logoImage}>
