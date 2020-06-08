@@ -50,6 +50,7 @@ function ShowCollegesContainer({ Searchedcolleges }) {
   }
   return Searchedcolleges.map((Searchedcollege, i) => (
     <ShowCollegePresenter
+      key={i}
       index={parseInt(Searchedcollege.collegeUnitId)}
       college={Searchedcollege}
       auth={auth}
