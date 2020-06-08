@@ -32,12 +32,17 @@ function ShowCollegesContainer({ Searchedcolleges }) {
       updatedColleges: colleges,
       name: 'gamjeonghan',
     };
-    console.log('show colleges container temp tdata');
+    console.log('updateColleges called!');
     console.log(tempData);
     await updateColleges(tempData);
   }
   function deleteFav(collegeid) {
     DeleteColleges(collegeid);
+    var tempData = {
+      id: id,
+      updatedColleges: colleges,
+    };
+    await updateColleges(tempData);
   }
   return Searchedcolleges.map((Searchedcollege, i) => (
     <ShowCollegePresenter

@@ -11,6 +11,8 @@ function HomeContainer() {
   console.log(colleges);
   console.log('in home container');
 
+  //here checking the token and set state to logged in!
+
   return (
     <>
       <HomePresenter />
