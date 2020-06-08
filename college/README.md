@@ -222,3 +222,4 @@ problems:
   => basic functionality of write done and connected with backend.
 
 - now get the ids from backend and colleges initiallly after login successfully then save it to context
+- in tempData, used static id. So need to read that after login.

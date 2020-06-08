@@ -7,11 +7,11 @@ import { updateColleges } from '../../api/backendAPI';
 
 function ShowCollegesContainer({ Searchedcolleges }) {
   //if checked then add to the database
-  const { auth, colleges, AddColleges, DeleteColleges } = useContext(
+  const { id, auth, colleges, AddColleges, DeleteColleges } = useContext(
     AuthContext
   );
 
-  async function addFav(id) {
+  async function addFav(collegeid) {
     /* 
     1. get colleges
     a. get colleges from context
@@ -22,19 +22,22 @@ function ShowCollegesContainer({ Searchedcolleges }) {
     */
     console.log('before calling adding');
     console.log(colleges);
-    AddColleges(id);
+    AddColleges(collegeid);
     console.log('in showcolelge container');
     console.log(colleges);
 
+    //now from the context, we need to find id of current user
     var tempData = {
-      id: '5edb67d6a5a6480a74fbb161',
+      id: id,
       updatedColleges: colleges,
       name: 'gamjeonghan',
     };
+    console.log('show colleges container temp tdata');
+    console.log(tempData);
     await updateColleges(tempData);
   }
-  function deleteFav(id) {
-    DeleteColleges(id);
+  function deleteFav(collegeid) {
+    DeleteColleges(collegeid);
   }
   return Searchedcolleges.map((Searchedcollege, i) => (
     <ShowCollegePresenter

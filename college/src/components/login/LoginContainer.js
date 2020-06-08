@@ -42,11 +42,16 @@ function LoginContainer() {
       //here check if statement with token
       saveToken(token);
       //set true for authenticated
-      setAuth(true);
+
+      //here save id
+
       //redirect to login page
 
       //with token, call backend data and save it to context
       const value = await getLoginInfo({ token });
+      //context savings
+      setAuth(true, value.data.info._id);
+
       setColleges(value.data.info.colleges);
       //console.log(value.data.info.colleges);
       history.push('/');
