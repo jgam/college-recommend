@@ -233,3 +233,6 @@ problems:
 - now two things
 - 1. colleges if in, then passin false for college presenter so we can delete right away
 - 2. if token is there, we need to keep it logged in!
+
+- first thing done
+- still token is there?
