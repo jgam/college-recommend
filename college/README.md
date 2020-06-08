@@ -223,3 +223,13 @@ problems:
 
 - now get the ids from backend and colleges initiallly after login successfully then save it to context
 - in tempData, used static id. So need to read that after login.
+
+## 20200608
+
+- static id updated
+- basic crud for adding favorites and delete
+- login with different users with fetching different data
+
+- now two things
+- 1. colleges if in, then passin false for college presenter so we can delete right away
+- 2. if token is there, we need to keep it logged in!
