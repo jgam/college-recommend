@@ -30,24 +30,33 @@ function HomePresenter() {
     max-width: 100%;
   `;
 
+  const LeftTitle = styled.div``;
+
+  const RightContent = styled.div``;
+
   return (
-    <Wrapper>
-      <Carousel itemsToShow={1} enableAutoPlay={true}>
-        <Item>
-          <Img src={Slider1} alt=''></Img>
-        </Item>
-        <Item>
-          <Img src={Slider2} alt=''></Img>
-        </Item>
-        <Item>
-          <Img src={Slider3} alt=''></Img>
-        </Item>
-        <Item>
-          <Img src={Slider4} alt=''></Img>
-        </Item>
-        <Item>My College?</Item>
-      </Carousel>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Carousel itemsToShow={1} enableAutoPlay={true}>
+          <Item>
+            <Img src={Slider1} alt=''></Img>
+          </Item>
+          <Item>
+            <Img src={Slider2} alt=''></Img>
+          </Item>
+          <Item>
+            <Img src={Slider3} alt=''></Img>
+          </Item>
+          <Item>
+            <Img src={Slider4} alt=''></Img>
+          </Item>
+          <Item>My College?</Item>
+        </Carousel>
+      </Wrapper>
+      <Wrapper>Academics?</Wrapper>
+      <Wrapper>Sports?</Wrapper>
+      <Wrapper>City?</Wrapper>
+    </>
   );
 }
 

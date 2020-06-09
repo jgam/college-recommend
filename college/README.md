@@ -239,4 +239,6 @@ problems:
 
 ## 20200609
 
-- styling
+- styling home page
+- slider added
+- animation at the bottom needs to be worked
