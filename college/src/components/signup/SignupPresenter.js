@@ -13,7 +13,7 @@ function SignupPresenter({ SignupData, handleChange, handleSubmit }) {
           onChange={handleChange}
         />
         <input
-          type={'text'}
+          type={'password'}
           placeholder={'type in pw'}
           value={SignupData.password}
           name={'password'}
