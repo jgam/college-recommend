@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import HomePresenter from './HomePresenter';
 
 import AuthContext from '../../contexts/AuthContext';
@@ -15,19 +14,9 @@ function HomeContainer() {
 
   async function getLogin(token) {
     saveToken(token);
-    //set true for authenticated
-
-    //here save id
-
-    //redirect to login page
-
-    //with token, call backend data and save it to context
     const value = await getLoginInfo({ token });
-    //context savings
     setAuth(true, value.data.info._id);
-    console.log(value.data.info.colleges);
     setColleges(value.data.info.colleges);
-    //console.log(value.data.info.colleges);
   }
   useEffect(() => {
     if (window.document.cookie.startsWith('token=')) {
@@ -43,7 +32,6 @@ function HomeContainer() {
   return (
     <>
       <HomePresenter />
-      <Link to={`/college`}>College Search</Link>
     </>
   );
 }

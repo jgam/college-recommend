@@ -76,10 +76,22 @@ function HeaderPresenter() {
       <div>
         <Header>
           <Logo>
-            <FontAwesomeIcon icon={faUniversity} />
+            <Link
+              to={'/'}
+              style={{ textDecoration: 'inherit', color: 'inherit' }}
+            >
+              <FontAwesomeIcon icon={faUniversity} />
+            </Link>
           </Logo>
           <HeaderMenus>
-            <MenuBox>Schools</MenuBox>
+            <MenuBox>
+              <Link
+                to={'/college'}
+                style={{ textDecoration: 'inherit', color: 'inherit' }}
+              >
+                Schools
+              </Link>
+            </MenuBox>
             <MenuBox>My Schools</MenuBox>
             <MenuBox>IR</MenuBox>
             <MenuBox>SNS</MenuBox>
