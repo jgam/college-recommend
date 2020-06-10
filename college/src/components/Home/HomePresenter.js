@@ -7,6 +7,8 @@ import Slider2 from '../../img/slider2.jpg';
 import Slider3 from '../../img/slider3.jpg';
 import Slider4 from '../../img/slider4.jpg';
 
+import { Link } from 'react-router-dom';
+
 function HomePresenter() {
   //check webtoken to say hello or login button
   const Wrapper = styled.div`
@@ -30,10 +32,30 @@ function HomePresenter() {
     max-width: 100%;
   `;
 
+  const HoverSearch = styled.div`
+    display: none;
+    color: black;
+    background-color: white;
+    font-size: 15px;
+    height: 10%;
+    width: 50%;
+    position: absolute;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    left: 0;
+    right: 0;
+
+    margin: 0 auto;
+    padding-top: 15px;
+    text-decoration: none;
+  `;
   const CriteriaBox = styled.div`
-    width: 300px;
+    width: 400px;
     height: 400px;
-    background-color: rgba(103, 58, 183, 0.5);
+    position: relative;
+
+    background-color: rgba(103, 58, 183, 1);
     border-radius: 30px;
     text-align: center;
     font-size: 30px;
@@ -41,8 +63,12 @@ function HomePresenter() {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    &:hover {
-      background-color: rgba(103, 58, 183, 1);
+    aling-items: center;
+    &: hover {
+      background-color: rgba(103, 58, 183, 0.5);
+    }
+    &:hover ${HoverSearch} {
+      display: block;
     }
   `;
 
@@ -76,18 +102,42 @@ function HomePresenter() {
       <Wrapper>
         <CriteriaBox>
           Academics?
+          <HoverSearch>
+            <Link
+              to={'/college'}
+              style={{ textDecoration: 'inherit', color: 'inherit' }}
+            >
+              Search Colleges
+            </Link>
+          </HoverSearch>
           <ContentsBox>Curriculum</ContentsBox>
           <ContentsBox>Career path</ContentsBox>
           <ContentsBox>Number of majors</ContentsBox>
         </CriteriaBox>
         <CriteriaBox>
           Sports?
+          <HoverSearch>
+            <Link
+              to={'/college'}
+              style={{ textDecoration: 'inherit', color: 'inherit' }}
+            >
+              Search Colleges
+            </Link>
+          </HoverSearch>
           <ContentsBox>Sports opportunities</ContentsBox>
           <ContentsBox>Sports facilities</ContentsBox>
           <ContentsBox>intermullar activities</ContentsBox>
         </CriteriaBox>
         <CriteriaBox>
           City?
+          <HoverSearch>
+            <Link
+              to={'/college'}
+              style={{ textDecoration: 'inherit', color: 'inherit' }}
+            >
+              Search Colleges
+            </Link>
+          </HoverSearch>
           <ContentsBox>City vibes</ContentsBox>
           <ContentsBox>Weather</ContentsBox>
           <ContentsBox>What is there?</ContentsBox>
