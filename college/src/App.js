@@ -16,6 +16,7 @@ import {
 } from 'react-router-dom';
 import Home from './components/Home';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 import AuthContext from './contexts/AuthContext';
 import AuthProvider from './components/contexts/Auth.Context';
@@ -61,6 +62,7 @@ function App() {
           <Route exact path={'/logout'} component={Logout} />
           <Redirect from={'*'} to={'/'} />
         </Switch>
+        <Footer />
       </AuthProvider>
     </Router>
   );

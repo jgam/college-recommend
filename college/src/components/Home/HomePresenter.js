@@ -18,6 +18,7 @@ function HomePresenter() {
     width: 80%;
     margin-right: auto;
     margin-left: auto;
+    font-family: 'Chelsea Market';
   `;
 
   const Item = styled.div`
