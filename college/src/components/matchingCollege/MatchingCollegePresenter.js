@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 //input field for sat scores or act scores
 //input field for gpa

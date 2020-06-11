@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from 'react-elastic-carousel';
 import styled from 'styled-components';
 import Slider1 from '../../img/slider1.jpg';
@@ -79,10 +79,17 @@ const ContentsBox = styled.div`
 function HomePresenter() {
   //check webtoken to say hello or login button
 
+  /*
+  const [autoPlay, setAuto] = useState(false);
+  useEffect(() => {
+    setAuto(!autoPlay);
+  }, []);
+  */
   return (
     <>
       <Wrapper>
-        <Carousel itemsToShow={1} enableAutoPlay={true}>
+        {/* <Carousel itemsToShow={1} enableAutoPlay={true}> */}
+        <Carousel itemsToShow={1}>
           <Item>
             <Img src={Slider1} alt=''></Img>
           </Item>

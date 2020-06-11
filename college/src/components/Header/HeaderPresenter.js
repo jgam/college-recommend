@@ -92,7 +92,14 @@ function HeaderPresenter() {
                 Schools
               </Link>
             </MenuBox>
-            <MenuBox>My Schools</MenuBox>
+            <MenuBox>
+              <Link
+                to={'/mycolleges'}
+                style={{ textDecoration: 'inherit', color: 'inherit' }}
+              >
+                My Schools
+              </Link>
+            </MenuBox>
             <MenuBox>IR</MenuBox>
             <MenuBox>SNS</MenuBox>
             <MenuBox>RECRUIT</MenuBox>

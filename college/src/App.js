@@ -5,6 +5,7 @@ import Login from './components/login';
 import Signup from './components/signup';
 import Profile from './components/profile';
 import Logout from './components/logout';
+import MyColleges from './components/myColleges';
 
 import { getLoginInfo } from './components/api/backendAPI';
 
@@ -57,6 +58,11 @@ function App() {
             authenticated={auth}
             path='/profile'
             render={(props) => <Profile user={user} {...props} />}
+          />
+          <AuthRoute
+            authenticated={auth}
+            path='/mycolleges'
+            render={(props) => <MyColleges {...props} />}
           />
           <Route exact path={'/'} component={Home} />
           <Route exact path={'/college'} component={MatchingCollege} />
