@@ -33,16 +33,19 @@ function App() {
 
   const token = getToken('token');
 
-  //maybe use Context for this as well
+  async function getUserData() {
+    const response = await getLoginInfo({ token });
+    return response;
+  }
+  console.log('before use effect');
+
   useEffect(() => {
-    console.log('in useEffect boi!');
-    async function getUserData() {
-      const response = await getLoginInfo({ token });
-      return response;
+    console.log('inside useEffect');
+    if (auth) {
+      getUserData().then((response) => {
+        setUser(response.data.info.username);
+      });
     }
-    getUserData().then((response) => {
-      setUser(response.data.info.username);
-    });
   });
 
   return (

@@ -93,6 +93,7 @@ const Icon = styled.div`
   align-items: center;
   cursor: pointer;
 `;
+
 function FooterPresenter() {
   return (
     <Wrapper>

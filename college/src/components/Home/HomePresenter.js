@@ -1,85 +1,83 @@
 import React from 'react';
 import Carousel from 'react-elastic-carousel';
 import styled from 'styled-components';
-import SliderMain from '../../img/sliderMain.jpeg';
 import Slider1 from '../../img/slider1.jpg';
 import Slider2 from '../../img/slider2.jpg';
 import Slider3 from '../../img/slider3.jpg';
 import Slider4 from '../../img/slider4.jpg';
 
 import { Link } from 'react-router-dom';
+const Wrapper = styled.div`
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: 'Chelsea Market';
+`;
 
+const Item = styled.div`
+  font-size: 100px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+`;
+
+const Img = styled.img`
+  max-height: 100%;
+  max-width: 100%;
+`;
+
+const HoverSearch = styled.div`
+  display: none;
+  color: black;
+  background-color: white;
+  font-size: 15px;
+  height: 10%;
+  width: 50%;
+  position: absolute;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  left: 0;
+  right: 0;
+
+  margin: 0 auto;
+  padding-top: 15px;
+  text-decoration: none;
+`;
+const CriteriaBox = styled.div`
+  width: 400px;
+  height: 400px;
+  position: relative;
+
+  background-color: rgba(103, 58, 183, 1);
+  border-radius: 30px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  aling-items: center;
+  &: hover {
+    background-color: rgba(103, 58, 183, 0.5);
+  }
+  &:hover ${HoverSearch} {
+    display: block;
+  }
+`;
+
+const ContentsBox = styled.div`
+  font-size: 20px;
+`;
+
+// const LeftTitle = styled.div``;
+
+// const RightContent = styled.div``;
 function HomePresenter() {
   //check webtoken to say hello or login button
-  const Wrapper = styled.div`
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-    font-family: 'Chelsea Market';
-  `;
-
-  const Item = styled.div`
-    font-size: 100px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-  `;
-
-  const Img = styled.img`
-    max-height: 100%;
-    max-width: 100%;
-  `;
-
-  const HoverSearch = styled.div`
-    display: none;
-    color: black;
-    background-color: white;
-    font-size: 15px;
-    height: 10%;
-    width: 50%;
-    position: absolute;
-    border-radius: 20px;
-    text-align: center;
-    cursor: pointer;
-    left: 0;
-    right: 0;
-
-    margin: 0 auto;
-    padding-top: 15px;
-    text-decoration: none;
-  `;
-  const CriteriaBox = styled.div`
-    width: 400px;
-    height: 400px;
-    position: relative;
-
-    background-color: rgba(103, 58, 183, 1);
-    border-radius: 30px;
-    text-align: center;
-    font-size: 30px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    aling-items: center;
-    &: hover {
-      background-color: rgba(103, 58, 183, 0.5);
-    }
-    &:hover ${HoverSearch} {
-      display: block;
-    }
-  `;
-
-  const ContentsBox = styled.div`
-    font-size: 20px;
-  `;
-
-  const LeftTitle = styled.div``;
-
-  const RightContent = styled.div``;
 
   return (
     <>

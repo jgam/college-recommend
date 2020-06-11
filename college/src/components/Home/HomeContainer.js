@@ -6,11 +6,7 @@ import { saveToken } from '../../auth/tokens';
 import { getLoginInfo } from '../../components/api/backendAPI';
 
 function HomeContainer() {
-  console.log('here is Home Containerw auth should be true...');
-  const { auth, colleges, setAuth, setColleges } = useContext(AuthContext);
-  console.log(auth);
-  console.log(colleges);
-  console.log('in home container');
+  const { setAuth, setColleges } = useContext(AuthContext);
 
   async function getLogin(token) {
     saveToken(token);
