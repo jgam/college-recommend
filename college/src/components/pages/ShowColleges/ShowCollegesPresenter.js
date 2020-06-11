@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  background-image: url(${(props) => (props.logo ? props.logo : '')});
+  font-family: 'Chelsea Market';
 `;
+//background-image: url(${(props) => (props.logo ? props.logo : '')});
 
 function ShowCollegesPresenter({
   index,
@@ -22,6 +23,7 @@ function ShowCollegesPresenter({
   return (
     <Wrapper key={index} logo={college.logoImage}>
       <h2>{college.name}</h2>
+      <img src={college.logoImage} alt='' width='300px' height='300px' />
       {auth ? (
         Added ? (
           <button
@@ -45,8 +47,12 @@ function ShowCollegesPresenter({
       ) : (
         ''
       )}
-      <img src={college.campusImage} alt='' />
-      <p>{college.shortDescription}</p>
+      <img src={college.campusImage} alt='' width='400px' height='300px' />
+      {college.shortDescription ? (
+        <p>{college.shortDescription}</p>
+      ) : (
+        <p>This college is {college.name}</p>
+      )}
     </Wrapper>
   );
 }

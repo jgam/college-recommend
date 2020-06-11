@@ -5,6 +5,15 @@ import AuthContext from '../../../contexts/AuthContext';
 
 import { updateColleges } from '../../api/backendAPI';
 
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  padding: 30px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 50px 60px;
+`;
+
 function ShowCollegesContainer({ Searchedcolleges }) {
   //if checked then add to the database
   const { id, auth, colleges, AddColleges, DeleteColleges } = useContext(
@@ -48,17 +57,21 @@ function ShowCollegesContainer({ Searchedcolleges }) {
     };
     await updateColleges(tempData);
   }
-  return Searchedcolleges.map((Searchedcollege, i) => (
-    <ShowCollegePresenter
-      key={i}
-      index={parseInt(Searchedcollege.collegeUnitId)}
-      college={Searchedcollege}
-      auth={auth}
-      addFav={addFav}
-      deleteFav={deleteFav}
-      added={colleges.includes(Searchedcollege.collegeUnitId)}
-    />
-  ));
+  return (
+    <Wrapper>
+      {Searchedcolleges.map((Searchedcollege, i) => (
+        <ShowCollegePresenter
+          key={i}
+          index={parseInt(Searchedcollege.collegeUnitId)}
+          college={Searchedcollege}
+          auth={auth}
+          addFav={addFav}
+          deleteFav={deleteFav}
+          added={colleges.includes(Searchedcollege.collegeUnitId)}
+        />
+      ))}
+    </Wrapper>
+  );
   //return <ShowCollegePresenter colleges={colleges} />;
 }
 

@@ -1,41 +1,92 @@
 import React from 'react';
 import styled from 'styled-components';
 
-//input field for sat scores or act scores
+//Input field for sat scores or act scores
 //input field for gpa
+const Wrapper = styled.div`
+  height: 400px;
+  width: 300px;
+  box-sizing: border-box;
+  color: white;
+  background-color: black;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 30px auto;
+`;
+
+const Title = styled.div`
+  font-size: 30px;
+  font-weight: 400;
+  margin-left: 23px;
+`;
+
+const Button = styled.button`
+  border-radius: 30px;
+  background-color: #57b846;
+  color: white;
+  display: block;
+  font-size: 20px;
+  width: 110px;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
+const Input = styled.input`
+  display: block;
+  height: 20px;
+  background-color: black;
+  border: none;
+  font-size: 20px;
+  border-bottom: solid grey 1px;
+  color: white;
+  &:focus {
+    outline: none;
+  }
+`;
+
+const Form = styled.form`
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+`;
 
 function MatchingCollegePresenter({ formData, handleChange, handleSubmit }) {
   //formData.colleges = list of colleges and we should show them
-  console.log('in college presenter!');
+
   return (
-    <div>
-      currently in matchingCollegePresenter
-      <h1>tell me ur stats!</h1>
-      <form onSubmit={handleSubmit}>
-        <input
+    <Wrapper>
+      <Title>Search Info</Title>
+      <Form onSubmit={handleSubmit}>
+        <Input
           type={'text'}
-          placeholder={'type in act score'}
+          placeholder={'ACT'}
           value={formData.act}
           name={'act'}
           onChange={handleChange}
         />
-        <input
+        <Input
           type={'text'}
-          placeholder={'type in sat score'}
+          placeholder={'SAT'}
           value={formData.sat}
           name={'sat'}
           onChange={handleChange}
         />
-        <input
+        <Input
           type={'text'}
-          placeholder={'type in GPA'}
+          placeholder={'GPA'}
           value={formData.gpa}
           name={'gpa'}
           onChange={handleChange}
         />
-        <button type={'submit'}> Submit </button>
-      </form>
-    </div>
+        <Button type={'submit'}> Submit </Button>
+      </Form>
+    </Wrapper>
   );
 }
 

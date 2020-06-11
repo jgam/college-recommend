@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MatchingCollegePresenter from './MatchingCollegePresenter';
 import getColleges from '../api/CollegeApi';
 import ShowColleges from '../pages/ShowColleges';
+import styled from 'styled-components';
 
 const initialFormData = {
   act: '',
@@ -69,6 +70,7 @@ function MatchingCollegeContainer() {
 
   //update state regarding input value
   const handleChange = (e) => {
+    console.log('handle change');
     console.log(e.target);
     setFormData({
       ...formData,
