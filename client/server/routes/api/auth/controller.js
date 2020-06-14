@@ -54,7 +54,7 @@ exports.login = (req, res) => {
             },
             secret,
             {
-              expiresIn: '7d',
+              expiresIn: '60d',
               issuer: 'jgam.com',
               subject: 'userInfo',
             },

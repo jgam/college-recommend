@@ -31,6 +31,7 @@ function LoginContainer() {
     //get context
 
     try {
+      console.log('in try');
       //postLogin module
       const {
         data: { token },
@@ -46,7 +47,6 @@ function LoginContainer() {
       //here save id
 
       //redirect to login page
-
       //with token, call backend data and save it to context
       const value = await getLoginInfo({ token });
       //context savings
@@ -59,6 +59,7 @@ function LoginContainer() {
     } catch (err) {
       console.log('error occurred in login');
       console.log(err);
+      console.log(err.message);
     }
     console.log('login done');
   }

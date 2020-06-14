@@ -1,8 +1,10 @@
+//react
 import React from 'react';
+
+//presenter
 import FooterPresenter from './FooterPresenter';
 
 function FooterContainer() {
-  console.log('footer container ');
   return <FooterPresenter />;
 }
 

@@ -20,6 +20,8 @@ export const getLoginInfo = function (params) {
   //here set new config
   const newConfig = config;
   newConfig.headers['x-access-token'] = params.token;
+  console.log('in get login info');
+  console.log(newConfig);
   return backendAPI.get('/check', newConfig);
 };
 

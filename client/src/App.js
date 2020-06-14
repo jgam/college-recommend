@@ -28,7 +28,7 @@ import { getLoginInfo } from './components/api/backendAPI';
 import Home from './components/Home';
 
 import Header from './components/templates/Header';
-import Footer from './components/Footer';
+import Footer from './components/templates/Footer';
 
 //now need to use context
 

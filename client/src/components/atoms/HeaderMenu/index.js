@@ -16,14 +16,15 @@ const HeaderMenuWrapper = styled.div`
 `;
 
 //props = {LinkTo: 'Linked to url'}
-function HeaderMenu(props) {
+function HeaderMenu({
+  LinkTo = '/',
+  content = 'default',
+  spacingSmaller = false,
+}) {
   return (
-    <HeaderMenuWrapper spacingSmaller={props.spacingSmaller}>
-      <Link
-        to={props.LinkTo}
-        style={{ textDecoration: 'inherit', color: 'inherit' }}
-      >
-        {props.content}
+    <HeaderMenuWrapper spacingSmaller={spacingSmaller}>
+      <Link to={LinkTo} style={{ textDecoration: 'inherit', color: 'inherit' }}>
+        {content}
       </Link>
     </HeaderMenuWrapper>
   );
