@@ -11,6 +11,10 @@ import AuthContext from '../../contexts/AuthContext';
 import Logo from '../../components/atoms/logo';
 import HeaderMenu from '../../components/atoms/HeaderMenu';
 import HeaderLogin from '../../components/atoms/HeaderLogin';
+import Button from '../../components/atoms/Button';
+
+//molecules
+import HeaderMenus from '../../components/molecules/HeaderMenus';
 
 const Header = styled.div`
   width: 100%;
@@ -31,11 +35,6 @@ const Header = styled.div`
 //   font-size: 80px;
 //   padding: 0 30px;
 // `;
-const HeaderMenus = styled.div`
-  display: flex;
-  height: 100%;
-  align-items: center;
-`;
 
 const Search = styled.div`
   display: flex;
@@ -81,22 +80,13 @@ function HeaderPresenter() {
       <div>
         <Header>
           <Logo />
-          <HeaderMenus>
-            <HeaderMenu LinkTo='/college' Content='Schools' />
-            <HeaderMenu LinkTo='/mycolleges' Content='mySchools' />
-
-            <MenuBox>IR</MenuBox>
-            <MenuBox>SNS</MenuBox>
-            <MenuBox>RECRUIT</MenuBox>
-          </HeaderMenus>
+          <HeaderMenus auth={auth} />
           <Search>
-            <Login>
-              {auth ? (
-                <Link to={'/logout'}>Logout</Link>
-              ) : (
-                <Link to={'/login'}>Login</Link>
-              )}
-            </Login>
+            {auth ? (
+              <Button content='logout' LinkTo='/logout' />
+            ) : (
+              <Button content='login' LinkTo='/login' />
+            )}
             <HeaderLogin Content='customer' />
 
             <HeaderLogin Content={<FontAwesomeIcon icon={faSearch} />} />
