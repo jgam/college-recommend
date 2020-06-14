@@ -9,6 +9,7 @@ import AuthContext from '../../contexts/AuthContext';
 
 //tests
 import Logo from '../../components/atoms/logo';
+import HeaderMenu from '../../components/atoms/HeaderMenu';
 
 const Header = styled.div`
   width: 100%;
@@ -80,14 +81,7 @@ function HeaderPresenter() {
         <Header>
           <Logo />
           <HeaderMenus>
-            <MenuBox>
-              <Link
-                to={'/college'}
-                style={{ textDecoration: 'inherit', color: 'inherit' }}
-              >
-                Schools
-              </Link>
-            </MenuBox>
+            <HeaderMenu LinkTo='/college' Content='Schools' />
             <MenuBox>
               <Link
                 to={'/mycolleges'}
