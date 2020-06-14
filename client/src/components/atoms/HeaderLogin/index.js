@@ -5,25 +5,23 @@ import { Link } from 'react-router-dom';
 //styled-components
 import styled from 'styled-components';
 
-//styled-components declaration
-const HeaderMenuWrapper = styled.div`
-  margin: auto 10px;
-  padding: 0 20px;
+//styled-components
+const CustomerWrapper = styled.div`
+  margin: 0 10px;
   cursor: pointer;
   height: 100%;
   display: flex;
   align-items: center;
 `;
 
-//props = {LinkTo: 'Linked to url'}
-function HeaderMenu({ LinkTo = '/', Content = 'HeaderMenu' }) {
+function HeaderLogin({ Content = 'default', LinkTo = '/' }) {
   return (
-    <HeaderMenuWrapper>
+    <CustomerWrapper>
       <Link to={LinkTo} style={{ textDecoration: 'inherit', color: 'inherit' }}>
         {Content}
       </Link>
-    </HeaderMenuWrapper>
+    </CustomerWrapper>
   );
 }
 
-export default HeaderMenu;
+export default HeaderLogin;

@@ -10,6 +10,7 @@ import AuthContext from '../../contexts/AuthContext';
 //tests
 import Logo from '../../components/atoms/logo';
 import HeaderMenu from '../../components/atoms/HeaderMenu';
+import HeaderLogin from '../../components/atoms/HeaderLogin';
 
 const Header = styled.div`
   width: 100%;
@@ -82,14 +83,8 @@ function HeaderPresenter() {
           <Logo />
           <HeaderMenus>
             <HeaderMenu LinkTo='/college' Content='Schools' />
-            <MenuBox>
-              <Link
-                to={'/mycolleges'}
-                style={{ textDecoration: 'inherit', color: 'inherit' }}
-              >
-                My Schools
-              </Link>
-            </MenuBox>
+            <HeaderMenu LinkTo='/mycolleges' Content='mySchools' />
+
             <MenuBox>IR</MenuBox>
             <MenuBox>SNS</MenuBox>
             <MenuBox>RECRUIT</MenuBox>
@@ -102,10 +97,9 @@ function HeaderPresenter() {
                 <Link to={'/login'}>Login</Link>
               )}
             </Login>
-            <SearchCustomer>CUSTOMER</SearchCustomer>
-            <SearchIcon>
-              <FontAwesomeIcon icon={faSearch} />
-            </SearchIcon>
+            <HeaderLogin Content='customer' />
+
+            <HeaderLogin Content={<FontAwesomeIcon icon={faSearch} />} />
             {auth ? <Link to='/profile'>Profiles</Link> : ''}
           </Search>
         </Header>
