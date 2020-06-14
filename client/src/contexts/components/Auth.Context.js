@@ -1,7 +1,7 @@
 //this is provider for auth context
 
 import React, { useState } from 'react';
-import AuthContext from '../../contexts/AuthContext';
+import AuthContext from '../AuthContext';
 //first declare functions and do state or setstate later
 //need to use hooks!
 
