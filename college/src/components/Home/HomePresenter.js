@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import Carousel from 'react-elastic-carousel';
-import styled from 'styled-components';
-import Slider1 from '../../img/slider1.jpg';
-import Slider2 from '../../img/slider2.jpg';
-import Slider3 from '../../img/slider3.jpg';
-import Slider4 from '../../img/slider4.jpg';
+import React from "react";
+import Carousel from "react-elastic-carousel";
+import styled from "styled-components";
+import Slider1 from "../../img/slider1.jpg";
+import Slider2 from "../../img/slider2.jpg";
+import Slider3 from "../../img/slider3.jpg";
+import Slider4 from "../../img/slider4.jpg";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 const Wrapper = styled.div`
   margin-top: 50px;
   display: flex;
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   width: 80%;
   margin-right: auto;
   margin-left: auto;
-  font-family: 'Chelsea Market';
+  font-family: "Chelsea Market";
 `;
 
 const Item = styled.div`
@@ -60,8 +60,8 @@ const CriteriaBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  aling-items: center;
-  &: hover {
+  align-items: center;
+  &:hover {
     background-color: rgba(103, 58, 183, 0.5);
   }
   &:hover ${HoverSearch} {
@@ -91,16 +91,16 @@ function HomePresenter() {
         {/* <Carousel itemsToShow={1} enableAutoPlay={true}> */}
         <Carousel itemsToShow={1}>
           <Item>
-            <Img src={Slider1} alt=''></Img>
+            <Img src={Slider1} alt=""></Img>
           </Item>
           <Item>
-            <Img src={Slider2} alt=''></Img>
+            <Img src={Slider2} alt=""></Img>
           </Item>
           <Item>
-            <Img src={Slider3} alt=''></Img>
+            <Img src={Slider3} alt=""></Img>
           </Item>
           <Item>
-            <Img src={Slider4} alt=''></Img>
+            <Img src={Slider4} alt=""></Img>
           </Item>
           <Item>My College?</Item>
         </Carousel>
@@ -110,8 +110,8 @@ function HomePresenter() {
           Academics?
           <HoverSearch>
             <Link
-              to={'/college'}
-              style={{ textDecoration: 'inherit', color: 'inherit' }}
+              to={"/college"}
+              style={{ textDecoration: "inherit", color: "inherit" }}
             >
               Search Colleges
             </Link>
@@ -124,8 +124,8 @@ function HomePresenter() {
           Sports?
           <HoverSearch>
             <Link
-              to={'/college'}
-              style={{ textDecoration: 'inherit', color: 'inherit' }}
+              to={"/college"}
+              style={{ textDecoration: "inherit", color: "inherit" }}
             >
               Search Colleges
             </Link>
@@ -138,8 +138,8 @@ function HomePresenter() {
           City?
           <HoverSearch>
             <Link
-              to={'/college'}
-              style={{ textDecoration: 'inherit', color: 'inherit' }}
+              to={"/college"}
+              style={{ textDecoration: "inherit", color: "inherit" }}
             >
               Search Colleges
             </Link>

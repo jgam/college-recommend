@@ -1,28 +1,26 @@
-import React, { useState, useEffect, useContext } from 'react';
-import AuthRoute from './auth/AuthRoute';
-import MatchingCollege from './components/matchingCollege';
-import Login from './components/login';
-import Signup from './components/signup';
-import Profile from './components/profile';
-import Logout from './components/logout';
-import MyColleges from './components/myColleges';
-
-import { getLoginInfo } from './components/api/backendAPI';
-
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect,
-} from 'react-router-dom';
-import Home from './components/Home';
-import Header from './components/Header';
-import Footer from './components/Footer';
+} from "react-router-dom";
 
-import AuthContext from './contexts/AuthContext';
-import AuthProvider from './components/contexts/Auth.Context';
+import AuthRoute from "./auth/AuthRoute";
+import MatchingCollege from "./components/matchingCollege";
+import Login from "./components/login";
+import Signup from "./components/signup";
+import Profile from "./components/profile";
+import Logout from "./components/logout";
+import MyColleges from "./components/myColleges";
+import { getLoginInfo } from "./components/api/backendAPI";
+import Home from "./components/Home";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import AuthProvider from "./components/contexts/Auth.Context";
 
-import { getToken } from './auth/tokens';
+import AuthContext from "./contexts/AuthContext";
+import { getToken } from "./auth/tokens";
 //now need to use context
 
 //<Route exact path={'/profile'} component={Profile} />;
@@ -32,22 +30,23 @@ function App() {
   //const authenticated = user != null;
   const { auth } = useContext(AuthContext);
 
-  const token = getToken('token');
+  const token = getToken("token");
 
-  async function getUserData() {
+  const getUserData = useCallback(async () => {
     const response = await getLoginInfo({ token });
     return response;
-  }
-  console.log('before use effect');
+  }, [token]);
+
+  console.log("before use effect");
 
   useEffect(() => {
-    console.log('inside useEffect');
+    console.log("inside useEffect");
     if (auth) {
       getUserData().then((response) => {
         setUser(response.data.info.username);
       });
     }
-  });
+  }, [auth, getUserData]);
 
   return (
     <Router>
@@ -56,20 +55,20 @@ function App() {
         <Switch>
           <AuthRoute
             authenticated={auth}
-            path='/profile'
+            path="/profile"
             render={(props) => <Profile user={user} {...props} />}
           />
           <AuthRoute
             authenticated={auth}
-            path='/mycolleges'
+            path="/mycolleges"
             render={(props) => <MyColleges {...props} />}
           />
-          <Route exact path={'/'} component={Home} />
-          <Route exact path={'/college'} component={MatchingCollege} />
-          <Route exact path={'/login'} component={Login} />
-          <Route exact path={'/signup'} component={Signup} />
-          <Route exact path={'/logout'} component={Logout} />
-          <Redirect from={'*'} to={'/'} />
+          <Route exact path={"/"} component={Home} />
+          <Route exact path={"/college"} component={MatchingCollege} />
+          <Route exact path={"/login"} component={Login} />
+          <Route exact path={"/signup"} component={Signup} />
+          <Route exact path={"/logout"} component={Logout} />
+          <Redirect from={"*"} to={"/"} />
         </Switch>
         <Footer />
       </AuthProvider>

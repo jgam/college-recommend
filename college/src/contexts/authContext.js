@@ -1,8 +1,8 @@
-import { createContext } from 'react';
+import { createContext } from "react";
 
 const AuthContext = createContext({
   auth: false,
-  id: '',
+  id: "",
   colleges: [],
   setAuth: () => {},
   setColleges: () => {},

@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
-import MatchingCollegePresenter from './MatchingCollegePresenter';
-import getColleges from '../api/CollegeApi';
-import ShowColleges from '../pages/ShowColleges';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import MatchingCollegePresenter from "./MatchingCollegePresenter";
+import getColleges from "../api/CollegeApi";
+import ShowColleges from "../pages/ShowColleges";
 
 const initialFormData = {
-  act: '',
-  sat: '',
-  gpa: '',
+  act: "",
+  sat: "",
+  gpa: "",
   colleges: {},
 };
 
 function MatchingCollegeContainer() {
-  console.log('currently in container');
+  console.log("currently in container");
   const [formData, setFormData] = useState(initialFormData);
 
   //use api
@@ -26,11 +25,11 @@ function MatchingCollegeContainer() {
       },
       offset: 9, //if want to load more info than 20 this is page index
       info_ids: [
-        'website',
-        'shortDescription',
-        'longDescription',
-        'campus_image',
-        'logo_image',
+        "website",
+        "shortDescription",
+        "longDescription",
+        "campus_image",
+        "logo_image",
       ], //returned object's content
     };
     /*
@@ -39,7 +38,7 @@ function MatchingCollegeContainer() {
       { params }
     );
     */
-    console.log('here is new api call');
+    console.log("here is new api call");
     console.log(formData);
     getColleges(params).then((data) => {
       console.log(data.data.colleges);
@@ -53,24 +52,24 @@ function MatchingCollegeContainer() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log('im in handlesubmit');
+    console.log("im in handlesubmit");
 
     try {
       getAPI(formData);
       //update colleges with setFormdata
       //reset the buttons
-      console.log('this should be after college data');
+      console.log("this should be after college data");
     } catch (error) {
       console.log(error);
     } finally {
-      console.log('in finally');
+      console.log("in finally");
       setFormData({ ...formData });
     }
   };
 
   //update state regarding input value
   const handleChange = (e) => {
-    console.log('handle change');
+    console.log("handle change");
     console.log(e.target);
     setFormData({
       ...formData,
@@ -94,7 +93,7 @@ function MatchingCollegeContainer() {
       {colleges.length !== undefined ? (
         <ShowColleges Searchedcolleges={colleges} />
       ) : (
-        ''
+        ""
       )}
     </div>
   );
