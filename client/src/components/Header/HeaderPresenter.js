@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import AuthContext from '../../contexts/AuthContext';
 
+//tests
+import Logo from '../../components/atoms/logo';
+
 const Header = styled.div`
   width: 100%;
   background-color: white;
@@ -20,12 +23,12 @@ const Header = styled.div`
   font-family: 'Chelsea Market';
 `;
 
-const Logo = styled.div`
-  height: 100px;
-  width: 100px;
-  font-size: 80px;
-  padding: 0 30px;
-`;
+// const Logo = styled.div`
+//   height: 100px;
+//   width: 100px;
+//   font-size: 80px;
+//   padding: 0 30px;
+// `;
 const HeaderMenus = styled.div`
   display: flex;
   height: 100%;
@@ -75,14 +78,7 @@ function HeaderPresenter() {
     <>
       <div>
         <Header>
-          <Logo>
-            <Link
-              to={'/'}
-              style={{ textDecoration: 'inherit', color: 'inherit' }}
-            >
-              <FontAwesomeIcon icon={faUniversity} />
-            </Link>
-          </Logo>
+          <Logo />
           <HeaderMenus>
             <MenuBox>
               <Link

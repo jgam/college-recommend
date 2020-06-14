@@ -20,7 +20,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import AuthContext from './contexts/AuthContext';
-import AuthProvider from './components/contexts/Auth.Context';
+import AuthProvider from '../src/contexts/components/Auth.Context';
 
 import { getToken } from './auth/tokens';
 //now need to use context
