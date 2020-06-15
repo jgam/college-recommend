@@ -17,17 +17,14 @@ const authMiddleware = (req, res, next) => {
   const p = new Promise((resolve, reject) => {
     jwt.verify(token, req.app.get('jwt-secret'), (err, decoded) => {
       if (err) {
-        console.log('verify err occurred');
         reject(err);
       }
-      console.log('verify fine');
       resolve(decoded);
     });
   });
 
   // if it has failed to verify, it will return an error message
   const onError = (error) => {
-    console.log('something has happened');
     //here jwt toekn expired error
     res.status(403).json({
       success: false,
@@ -39,8 +36,6 @@ const authMiddleware = (req, res, next) => {
   // process the promise
   p.then((decoded) => {
     req.decoded = decoded;
-    console.log('decoded');
-    console.log(decoded);
     next();
     //next() does the following. We need because modulized this part!
     // res.json({

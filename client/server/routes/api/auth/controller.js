@@ -53,7 +53,6 @@ exports.login = (req, res) => {
               _id: user._id,
               username: user.username,
               colleges: user.colleges,
-              iat: 1592184079,
             },
             secret,
             {
@@ -94,7 +93,6 @@ exports.login = (req, res) => {
 };
 
 exports.check = (req, res) => {
-  console.log('2nd check');
   res.json({
     success: true,
     info: req.decoded,
