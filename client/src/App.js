@@ -17,7 +17,7 @@ import { getToken } from './auth/tokens';
 
 //templates
 import MatchingCollege from './components/matchingCollege';
-import Login from './components/login';
+//import Login from './components/login';
 import Signup from './components/signup';
 import Profile from './components/profile';
 import Logout from './components/logout';
@@ -29,6 +29,7 @@ import Home from './components/pages/Home';
 
 import Header from './components/templates/Header';
 import Footer from './components/templates/Footer';
+import Login from './components/pages/Login';
 
 //now need to use context
 
