@@ -48,6 +48,7 @@ function LoginContainer() {
 
       //redirect to login page
       //with token, call backend data and save it to context
+      console.log('before ogin infoß');
       const value = await getLoginInfo({ token });
       //context savings
       setAuth(true, value.data.info._id);
