@@ -25,7 +25,7 @@ import MyColleges from './components/myColleges';
 
 import { getLoginInfo } from './components/api/backendAPI';
 
-import Home from './components/Home';
+import Home from './components/pages/Home';
 
 import Header from './components/templates/Header';
 import Footer from './components/templates/Footer';
