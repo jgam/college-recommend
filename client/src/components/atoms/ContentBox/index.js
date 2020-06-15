@@ -24,7 +24,7 @@ const HoverElement = styled.div`
   text-decoration: none;
 `;
 const ContentBoxWrapper = styled.div`
-  width: 400px;
+  width: 300px;
   height: 400px;
   position: relative;
 

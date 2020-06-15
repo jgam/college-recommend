@@ -1,19 +1,27 @@
+//React
 import React, { useContext, useEffect } from 'react';
 import HomePresenter from './HomePresenter';
 
-import AuthContext from '../../contexts/AuthContext';
-import { saveToken } from '../../auth/tokens';
-import { getLoginInfo } from '../../components/api/backendAPI';
+//context
+import AuthContext from '../../../contexts/AuthContext';
+import { saveToken } from '../../../auth/tokens';
+
+//api
+import { getLoginInfo } from '../../../components/api/backendAPI';
 
 function HomeContainer() {
+  //Context
   const { setAuth, setColleges } = useContext(AuthContext);
 
+  //api function
   async function getLogin(token) {
     saveToken(token);
     const value = await getLoginInfo({ token });
     setAuth(true, value.data.info._id);
     setColleges(value.data.info.colleges);
   }
+
+  //Effect hooks
   useEffect(() => {
     if (window.document.cookie.startsWith('token=')) {
       getLogin(window.document.cookie.slice(6));
@@ -21,15 +29,11 @@ function HomeContainer() {
     } else {
       setAuth(false);
     }
+    return () => {
+      console.log('unmounted');
+    };
   }, []);
-
-  //here checking the token and set state to logged in!
-
-  return (
-    <>
-      <HomePresenter />
-    </>
-  );
+  return <HomePresenter />;
 }
 
 export default HomeContainer;
