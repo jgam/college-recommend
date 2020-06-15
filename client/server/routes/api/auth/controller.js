@@ -41,7 +41,9 @@ exports.login = (req, res) => {
       throw new Error('user not exist');
     } else {
       // user exists? check the password
+      console.log('got in else of check');
       if (user.verify(password)) {
+        //verified with hashed key
         console.log('colleges');
         console.log(user);
         console.log(user.colleges);
@@ -54,7 +56,7 @@ exports.login = (req, res) => {
             },
             secret,
             {
-              expiresIn: '60d',
+              expiresIn: '7d', //datetime.utcnow() + timedelta((days = 3)),
               issuer: 'jgam.com',
               subject: 'userInfo',
             },
