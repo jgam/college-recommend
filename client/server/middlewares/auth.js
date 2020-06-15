@@ -42,6 +42,11 @@ const authMiddleware = (req, res, next) => {
     console.log('decoded');
     console.log(decoded);
     next();
+    //next() does the following. We need because modulized this part!
+    // res.json({
+    //   success: true,
+    //   info: req.decoded,
+    // });
   }).catch(onError);
 };
 
