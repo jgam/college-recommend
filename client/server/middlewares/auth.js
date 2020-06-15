@@ -32,7 +32,6 @@ const authMiddleware = (req, res, next) => {
       expiredAt: error,
     });
   };
-
   // process the promise
   p.then((decoded) => {
     req.decoded = decoded;
