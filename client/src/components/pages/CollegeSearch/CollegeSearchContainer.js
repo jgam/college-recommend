@@ -44,24 +44,19 @@ function CollegeSearchContainer() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('handlesubmit here');
     try {
       getAPI(formData);
       //update colleges with setFormdata
       //reset the buttons
-      console.log('this should be after college data');
     } catch (error) {
       console.log(error);
     } finally {
-      console.log('in finally');
       setFormData({ ...formData });
     }
   };
 
   //update state regarding input value
   const handleChange = (e) => {
-    console.log('handle change');
-    console.log(e.target);
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -75,7 +70,7 @@ function CollegeSearchContainer() {
   return (
     <div>
       <CollegeSearchPresenter
-        title='College Searchfß'
+        title='College Search'
         formData={formData}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
