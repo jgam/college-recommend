@@ -17,7 +17,6 @@ import { getToken } from './auth/tokens';
 
 //templates
 import MatchingCollege from './components/matchingCollege';
-//import Login from './components/login';
 import Signup from './components/signup';
 import Profile from './components/profile';
 import Logout from './components/logout';
