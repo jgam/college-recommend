@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import MatchingCollegePresenter from './MatchingCollegePresenter';
-import { getColleges } from '../api/CollegeApi';
-import ShowColleges from '../pages/ShowColleges';
+import CollegeSearchPresenter from './CollegeSearchPresenter';
+import { getColleges } from '../../api/CollegeApi';
+import ShowColleges from '../../pages/ShowColleges';
 
 const initialFormData = {
   act: '',
@@ -10,7 +10,7 @@ const initialFormData = {
   colleges: {},
 };
 
-function MatchingCollegeContainer() {
+function CollegeSearchContainer() {
   console.log('currently in container');
   const [formData, setFormData] = useState(initialFormData);
 
@@ -44,9 +44,7 @@ function MatchingCollegeContainer() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log('im in handlesubmit');
-
+    console.log('handlesubmit here');
     try {
       getAPI(formData);
       //update colleges with setFormdata
@@ -73,12 +71,11 @@ function MatchingCollegeContainer() {
   //destructing
   const { colleges } = formData;
 
-  console.log(formData);
-
   //call ShowColleges based on state
   return (
     <div>
-      <MatchingCollegePresenter
+      <CollegeSearchPresenter
+        title='College Searchfß'
         formData={formData}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
@@ -92,4 +89,4 @@ function MatchingCollegeContainer() {
   );
 }
 
-export default MatchingCollegeContainer;
+export default CollegeSearchContainer;

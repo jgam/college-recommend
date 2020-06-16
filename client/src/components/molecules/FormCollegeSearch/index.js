@@ -38,7 +38,7 @@ function FormCollegeSearch({ formData, handleChange, handleSubmit }) {
         name={'gpa'}
         onChange={handleChange}
       />
-      <FormButton content='Search' type={'submit'} />
+      <FormButton content='Search' type={'submit'} LinkTo='/college' />
     </Form>
   );
 }

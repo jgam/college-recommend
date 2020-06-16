@@ -29,6 +29,7 @@ import Home from './components/pages/Home';
 import Header from './components/templates/Header';
 import Footer from './components/templates/Footer';
 import Login from './components/pages/Login';
+import CollegeSearch from './components/pages/CollegeSearch';
 
 //now need to use context
 
@@ -72,7 +73,7 @@ function App() {
             render={(props) => <MyColleges {...props} />}
           />
           <Route exact path={'/'} component={Home} />
-          <Route exact path={'/college'} component={MatchingCollege} />
+          <Route exact path={'/college'} component={CollegeSearch} />
           <Route exact path={'/login'} component={Login} />
           <Route exact path={'/signup'} component={Signup} />
           <Route exact path={'/logout'} component={Logout} />
